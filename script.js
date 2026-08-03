@@ -1,122 +1,90 @@
-// ================================
-// TAMANHO DA FONTE
-// ================================
+body{
 
-let tamanhoFonte = 18;
-
-function aumentarFonte() {
-    tamanhoFonte += 2;
-    document.body.style.fontSize = tamanhoFonte + "px";
-}
-
-function diminuirFonte() {
-    if (tamanhoFonte > 12) {
-        tamanhoFonte -= 2;
-        document.body.style.fontSize = tamanhoFonte + "px";
-    }
-}
-
-// ================================
-// ALTO CONTRASTE
-// ================================
-
-function altoContraste() {
-    document.body.classList.toggle("altoContraste");
-}
-
-// ================================
-// LEITOR DE TELA
-// ================================
-
-let fala = window.speechSynthesis;
-
-function lerPagina() {
-
-    fala.cancel();
-
-    let texto = document.querySelector("main").innerText;
-
-    let leitura = new SpeechSynthesisUtterance(texto);
-
-    leitura.lang = "pt-BR";
-    leitura.rate = 1;
-    leitura.pitch = 1;
-
-    fala.speak(leitura);
+font-family:Arial,Helvetica,sans-serif;
+font-size:18px;
+background:#f4f7fa;
+color:#222;
+line-height:1.7;
 
 }
 
-// ================================
-// PARAR LEITURA
-// ================================
+html{
 
-function pararLeitura() {
-    fala.cancel();
-}
-
-// ================================
-// VOLTAR AO TOPO
-// ================================
-
-function voltarTopo() {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
+scroll-behavior:smooth;
 
 }
 
-// ================================
-// NAVEGAÇÃO POR TECLADO
-// ================================
+.navbar{
 
-document.addEventListener("keydown", function(event){
+box-shadow:0 3px 10px rgba(0,0,0,.2);
 
-    // Alt + A → aumenta fonte
-    if(event.altKey && event.key === "a"){
-        aumentarFonte();
-    }
+}
 
-    // Alt + D → diminui fonte
-    if(event.altKey && event.key === "d"){
-        diminuirFonte();
-    }
+h1,h2{
 
-    // Alt + C → alto contraste
-    if(event.altKey && event.key === "c"){
-        altoContraste();
-    }
+color:#0d6efd;
 
-    // Alt + L → leitor de tela
-    if(event.altKey && event.key === "l"){
-        lerPagina();
-    }
+}
 
-});
-<div class="mt-4">
+section{
 
-    <button class="btn btn-success" onclick="aumentarFonte()">
-        A+
-    </button>
+margin-top:60px;
+margin-bottom:60px;
 
-    <button class="btn btn-warning" onclick="diminuirFonte()">
-        A-
-    </button>
+}
 
-    <button class="btn btn-dark" onclick="altoContraste()">
-        Alto Contraste
-    </button>
+.card{
 
-    <button class="btn btn-primary" onclick="lerPagina()">
-        🔊 Ler Página
-    </button>
+border:none;
+border-radius:15px;
+box-shadow:0 6px 15px rgba(0,0,0,.2);
+transition:.3s;
 
-    <button class="btn btn-danger" onclick="pararLeitura()">
-        ⏹ Parar
-    </button>
+}
 
-</div>
+.card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.btn{
+
+margin:5px;
+
+}
+
+.altoContraste{
+
+background:black;
+color:white;
+
+}
+
+.altoContraste h1,
+.altoContraste h2,
+.altoContraste h3{
+
+color:yellow;
+
+}
+
+.altoContraste .card{
+
+background:#222;
+color:white;
+border:2px solid yellow;
+
+}
+
+.altoContraste .navbar{
+
+background:black !important;
+
+}
+
+.altoContraste footer{
+
+background:black !important;
+
+}
