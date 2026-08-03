@@ -1,90 +1,157 @@
-body{
+// =========================
+// PORTAL INCLUSIVO
+// script.js
+// =========================
 
-font-family:Arial,Helvetica,sans-serif;
-font-size:18px;
-background:#f4f7fa;
-color:#222;
-line-height:1.7;
+// Tamanho inicial da fonte
+let tamanhoFonte = 18;
 
-}
+// Controle da leitura
+let sintetizador = window.speechSynthesis;
+let falaAtual = null;
 
-html{
+// =========================
+// AUMENTAR FONTE
+// =========================
+function aumentarFonte() {
 
-scroll-behavior:smooth;
+    if (tamanhoFonte < 34) {
 
-}
+        tamanhoFonte += 2;
 
-.navbar{
+        document.body.style.fontSize = tamanhoFonte + "px";
 
-box-shadow:0 3px 10px rgba(0,0,0,.2);
-
-}
-
-h1,h2{
-
-color:#0d6efd;
-
-}
-
-section{
-
-margin-top:60px;
-margin-bottom:60px;
+    }
 
 }
 
-.card{
+// =========================
+// DIMINUIR FONTE
+// =========================
+function diminuirFonte() {
 
-border:none;
-border-radius:15px;
-box-shadow:0 6px 15px rgba(0,0,0,.2);
-transition:.3s;
+    if (tamanhoFonte > 14) {
 
-}
+        tamanhoFonte -= 2;
 
-.card:hover{
+        document.body.style.fontSize = tamanhoFonte + "px";
 
-transform:translateY(-6px);
-
-}
-
-.btn{
-
-margin:5px;
+    }
 
 }
 
-.altoContraste{
+// =========================
+// ALTO CONTRASTE
+// =========================
+function altoContraste() {
 
-background:black;
-color:white;
-
-}
-
-.altoContraste h1,
-.altoContraste h2,
-.altoContraste h3{
-
-color:yellow;
+    document.body.classList.toggle("altoContraste");
 
 }
 
-.altoContraste .card{
+// =========================
+// LER PÁGINA
+// =========================
+function lerPagina() {
 
-background:#222;
-color:white;
-border:2px solid yellow;
+    // Para qualquer leitura anterior
+    sintetizador.cancel();
+
+    // Lê somente o conteúdo principal
+    let texto = document.querySelector("main").innerText;
+
+    falaAtual = new SpeechSynthesisUtterance(texto);
+
+    falaAtual.lang = "pt-BR";
+    falaAtual.rate = 1;
+    falaAtual.pitch = 1;
+    falaAtual.volume = 1;
+
+    sintetizador.speak(falaAtual);
 
 }
 
-.altoContraste .navbar{
+// =========================
+// PARAR LEITURA
+// =========================
+function pararLeitura() {
 
-background:black !important;
-
-}
-
-.altoContraste footer{
-
-background:black !important;
+    sintetizador.cancel();
 
 }
+
+// =========================
+// FECHAR MENU APÓS CLICAR
+// (CELULAR)
+// =========================
+
+const links = document.querySelectorAll(".nav-link");
+
+links.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        let menu = document.getElementById("menuPrincipal");
+
+        if (menu.classList.contains("show")) {
+
+            new bootstrap.Collapse(menu).toggle();
+
+        }
+
+    });
+
+});
+
+// =========================
+// MENSAGEM DE BOAS-VINDAS
+// =========================
+
+window.onload = function () {
+
+    console.log("Portal Inclusivo carregado com sucesso.");
+
+};
+
+// =========================
+// ATALHOS DO TECLADO
+// =========================
+
+document.addEventListener("keydown", function (e) {
+
+    // ALT + +
+    if (e.altKey && e.key === "+") {
+
+        aumentarFonte();
+
+    }
+
+    // ALT + -
+    if (e.altKey && e.key === "-") {
+
+        diminuirFonte();
+
+    }
+
+    // ALT + C
+    if (e.altKey && (e.key === "c" || e.key === "C")) {
+
+        altoContraste();
+
+    }
+
+    // ALT + L
+    if (e.altKey && (e.key === "l" || e.key === "L")) {
+
+        lerPagina();
+
+    }
+
+    // ESC
+    if (e.key === "Escape") {
+
+        pararLeitura();
+
+    }
+
+});
