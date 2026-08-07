@@ -1,64 +1,76 @@
-// =========================
+// ========================================
 // PORTAL INCLUSIVO
 // script.js
-// =========================
+// ========================================
 
-// Tamanho inicial da fonte
+"use strict";
+
+// -------------------------------
+// TAMANHO DA FONTE
+// -------------------------------
+
 let tamanhoFonte = 18;
 
-// Controle da leitura
-let sintetizador = window.speechSynthesis;
+// -------------------------------
+// LEITOR DE TELA
+// -------------------------------
+
+const sintetizador = window.speechSynthesis;
 let falaAtual = null;
 
-// =========================
+// -------------------------------
 // AUMENTAR FONTE
-// =========================
+// -------------------------------
+
 function aumentarFonte() {
 
     if (tamanhoFonte < 34) {
 
         tamanhoFonte += 2;
-
         document.body.style.fontSize = tamanhoFonte + "px";
 
     }
 
 }
 
-// =========================
+// -------------------------------
 // DIMINUIR FONTE
-// =========================
+// -------------------------------
+
 function diminuirFonte() {
 
     if (tamanhoFonte > 14) {
 
         tamanhoFonte -= 2;
-
         document.body.style.fontSize = tamanhoFonte + "px";
 
     }
 
 }
 
-// =========================
+// -------------------------------
 // ALTO CONTRASTE
-// =========================
+// -------------------------------
+
 function altoContraste() {
 
     document.body.classList.toggle("altoContraste");
 
 }
 
-// =========================
+// -------------------------------
 // LER PÁGINA
-// =========================
+// -------------------------------
+
 function lerPagina() {
 
-    // Para qualquer leitura anterior
     sintetizador.cancel();
 
-    // Lê somente o conteúdo principal
-    let texto = document.querySelector("main").innerText;
+    const conteudo = document.querySelector("main");
+
+    if (!conteudo) return;
+
+    const texto = conteudo.innerText;
 
     falaAtual = new SpeechSynthesisUtterance(texto);
 
@@ -71,83 +83,100 @@ function lerPagina() {
 
 }
 
-// =========================
+// -------------------------------
 // PARAR LEITURA
-// =========================
+// -------------------------------
+
 function pararLeitura() {
 
     sintetizador.cancel();
 
 }
+// ========================================
+// FECHAR MENU AO CLICAR (CELULAR)
+// ========================================
 
-// =========================
-// FECHAR MENU APÓS CLICAR
-// (CELULAR)
-// =========================
+document.addEventListener("DOMContentLoaded", function () {
 
-const links = document.querySelectorAll(".nav-link");
+    const links = document.querySelectorAll(".nav-link");
+    const menu = document.getElementById("menuPrincipal");
 
-links.forEach(link => {
+    links.forEach(function (link) {
 
-    link.addEventListener("click", () => {
+        link.addEventListener("click", function () {
 
-        let menu = document.getElementById("menuPrincipal");
+            if (menu && menu.classList.contains("show")) {
 
-        if (menu.classList.contains("show")) {
+                const bsCollapse = bootstrap.Collapse.getInstance(menu)
+                    || new bootstrap.Collapse(menu, {
+                        toggle: false
+                    });
 
-            new bootstrap.Collapse(menu).toggle();
+                bsCollapse.hide();
 
-        }
+            }
+
+        });
 
     });
 
 });
 
-// =========================
+// ========================================
 // MENSAGEM DE BOAS-VINDAS
-// =========================
+// ========================================
 
-window.onload = function () {
+window.addEventListener("load", function () {
 
     console.log("Portal Inclusivo carregado com sucesso.");
 
-};
+});
 
-// =========================
+// ========================================
 // ATALHOS DO TECLADO
-// =========================
+// ========================================
 
 document.addEventListener("keydown", function (e) {
 
-    // ALT + +
-    if (e.altKey && e.key === "+") {
+    // ALT + =
+    // (em muitos teclados o "+" é ALT + =)
 
+    if (e.altKey && (e.key === "+" || e.key === "=")) {
+
+        e.preventDefault();
         aumentarFonte();
 
     }
 
     // ALT + -
+
     if (e.altKey && e.key === "-") {
 
+        e.preventDefault();
         diminuirFonte();
 
     }
 
     // ALT + C
-    if (e.altKey && (e.key === "c" || e.key === "C")) {
 
+    if (e.altKey && e.key.toLowerCase() === "c") {
+
+        e.preventDefault();
         altoContraste();
 
     }
 
     // ALT + L
-    if (e.altKey && (e.key === "l" || e.key === "L")) {
 
+    if (e.altKey && e.key.toLowerCase() === "l") {
+
+        e.preventDefault();
         lerPagina();
 
     }
 
     // ESC
+
     if (e.key === "Escape") {
 
         pararLeitura();
