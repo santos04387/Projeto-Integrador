@@ -44,6 +44,49 @@ function diminuirFonte() {
     }
 
 }
+// -------------------------------
+// LEITOR DE TELA
+// -------------------------------
+
+const sintetizador = window.speechSynthesis;
+let falaAtual = null;
+
+
+// -------------------------------
+// LER PÁGINA
+// -------------------------------
+
+function lerPagina() {
+
+    sintetizador.cancel();
+
+    const conteudo = document.querySelector("main");
+
+    if (!conteudo) return;
+
+    const texto = conteudo.innerText;
+
+    falaAtual = new SpeechSynthesisUtterance(texto);
+
+    falaAtual.lang = "pt-BR";
+    falaAtual.rate = 1;
+    falaAtual.pitch = 1;
+    falaAtual.volume = 1;
+
+    sintetizador.speak(falaAtual);
+
+}
+
+
+// -------------------------------
+// PARAR LEITURA
+// -------------------------------
+
+function pararLeitura() {
+
+    sintetizador.cancel();
+
+}
 
 // -------------------------------
 // ALTO CONTRASTE
