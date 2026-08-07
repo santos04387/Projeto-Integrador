@@ -9,14 +9,8 @@
 // TAMANHO DA FONTE
 // -------------------------------
 
-let tamanhoFonte = 18;
+let tamanhoFonte = 100;
 
-// -------------------------------
-// LEITOR DE TELA
-// -------------------------------
-
-const sintetizador = window.speechSynthesis;
-let falaAtual = null;
 
 // -------------------------------
 // AUMENTAR FONTE
@@ -24,14 +18,16 @@ let falaAtual = null;
 
 function aumentarFonte() {
 
-    if (tamanhoFonte < 34) {
+    if (tamanhoFonte < 160) {
 
-        tamanhoFonte += 2;
-        document.body.style.fontSize = tamanhoFonte + "px";
+        tamanhoFonte += 10;
+
+        document.documentElement.style.fontSize = tamanhoFonte + "%";
 
     }
 
 }
+
 
 // -------------------------------
 // DIMINUIR FONTE
@@ -39,10 +35,11 @@ function aumentarFonte() {
 
 function diminuirFonte() {
 
-    if (tamanhoFonte > 14) {
+    if (tamanhoFonte > 70) {
 
-        tamanhoFonte -= 2;
-        document.body.style.fontSize = tamanhoFonte + "px";
+        tamanhoFonte -= 10;
+
+        document.documentElement.style.fontSize = tamanhoFonte + "%";
 
     }
 
