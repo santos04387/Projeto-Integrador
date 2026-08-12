@@ -1,467 +1,175 @@
-/* ==================================
-   PORTAL INCLUSIVO
-   style.css - PARTE 1
-================================== */
-
-
-/* RESET */
-
-* {
-
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
-
-
-/* CONFIGURAÇÃO GERAL */
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
 
 html {
-
     scroll-behavior: smooth;
+}
 
+body {
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 
-bbody {
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 1rem;
-
-    line-height: 1.8;
-
-}
-
-
-/* ================================
-   NAVBAR
-================================ */
-
-
-.navbar {
-
-    box-shadow: 0 3px 10px rgba(0,0,0,.25);
-
-}
-
-
-.navbar-brand {
-
-    font-size: 1.6rem;
-
-    font-weight: bold;
-
-}
-
-
-.nav-link {
-
-    font-size: 1.05rem;
-
-    transition: .3s;
-
-}
-
-
-.nav-link:hover {
-
-    text-decoration: underline;
-
-}
-
-
-/* ================================
-   SEÇÕES
-================================ */
-
-
-section {
-
-    margin-top: 70px;
-
-    margin-bottom: 70px;
-
-}
-
-
-h1 {
-
-    color: #0d6efd;
-
-    font-weight: bold;
-
-    font-size: 2.5rem;
-
-    margin-bottom: 25px;
-
-}
-
-h2 {
-
-    color: #0d6efd;
-
-    font-weight: bold;
-
-    font-size: 2rem;
-
-    margin-bottom: 30px;
-
-}
-
-
-h3 {
-
-    color: #0d6efd;
-
-    font-size: 1.3rem;
-
-}
-
-
-p {
-
-    font-size: 1rem;
-
-}
-
-
-/* ================================
-   IMAGEM
-================================ */
-
-
-img {
-
-    border-radius: 15px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,.25);
-
-    max-width: 100%;
-
-}
-
-
-/* ================================
+/* =====================================
    CARDS
-================================ */
-
+===================================== */
 
 .card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
-    border: none;
-
-    border-radius: 18px;
-
-    box-shadow: 0 8px 18px rgba(0,0,0,.15);
-
-    transition: .3s;
-
+.card:hover,
+.card:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 
-.card:hover {
+/* =====================================
+   FLASHCARDS
+===================================== */
 
-    transform: translateY(-8px);
-
-}
-
-
-.card-body {
-
-    text-align: center;
-
-    padding: 25px;
-
-}
-
-
-.card p {
-
+.resposta-flashcard {
+    display: none;
     margin-top: 15px;
+    padding: 15px;
+    background-color: #e9f7ef;
+    border-left: 5px solid #198754;
+    border-radius: 5px;
+}
 
+.resposta-flashcard.mostrar {
+    display: block;
 }
 
 
-/* ================================
-   BOTÕES
-================================ */
-
-
-.btn {
-
-    margin: 5px;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    min-height: 48px;
-
-    border-radius: 10px;
-
-}
-
-
-button {
-
-    cursor: pointer;
-
-}
-
-
-/* ================================
-   FOOTER
-================================ */
-
-
-footer {
-
-    margin-top: 80px;
-
-}
-
-
-footer p {
-
-    margin-bottom: 5px;
-
-}
-/* ==================================
-   PORTAL INCLUSIVO
-   style.css - PARTE 2
-================================== */
-
-
-/* ================================
+/* =====================================
    ALTO CONTRASTE
-================================ */
+===================================== */
 
+body.alto-contraste {
+    background-color: #000 !important;
+    color: #fff !important;
+}
 
-.altoContraste {
+body.alto-contraste main,
+body.alto-contraste section,
+body.alto-contraste article,
+body.alto-contraste .card {
+    background-color: #000 !important;
+    color: #fff !important;
+}
 
-    background: #000;
+body.alto-contraste .card {
+    border: 2px solid #fff;
+}
 
+body.alto-contraste a {
+    color: #ffff00 !important;
+}
+
+body.alto-contraste .resposta-flashcard {
+    background-color: #111;
     color: #fff;
-
+    border-color: #ffff00;
 }
 
 
-.altoContraste h1,
-.altoContraste h2,
-.altoContraste h3 {
+/* =====================================
+   ESCALA DE CINZA
+===================================== */
 
-    color: yellow;
-
+body.escala-cinza {
+    filter: grayscale(100%);
 }
 
 
-.altoContraste p {
+/* =====================================
+   DESTACAR LINKS
+===================================== */
 
-    color: white;
-
+body.destacar-links a {
+    background-color: #ffff00 !important;
+    color: #000 !important;
+    text-decoration: underline !important;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 3px;
 }
 
 
-.altoContraste .card {
+/* =====================================
+   ESPAÇAMENTO DE TEXTO
+===================================== */
 
-    background: #222;
+body.espacamento-texto {
+    line-height: 2 !important;
+    letter-spacing: 0.08em;
+    word-spacing: 0.15em;
+}
 
-    color: white;
-
-    border: 2px solid yellow;
-
+body.espacamento-texto p {
+    margin-bottom: 1.5rem;
 }
 
 
-.altoContraste .navbar {
-
-    background: black !important;
-
-}
-
-
-.altoContraste footer {
-
-    background: black !important;
-
-}
-
-
-.altoContraste .nav-link {
-
-    color: white !important;
-
-}
-
-
-.altoContraste .btn-dark {
-
-    border: 2px solid yellow;
-
-}
-
-
-.altoContraste img {
-
-    border: 3px solid yellow;
-
-}
-
-
-/* ================================
-   FOCO PARA ACESSIBILIDADE
-================================ */
-
+/* =====================================
+   FOCO DO TECLADO
+===================================== */
 
 button:focus,
-a:focus {
-
-    outline: 4px solid orange;
-
+a:focus,
+.card:focus {
+    outline: 4px solid #ffcc00 !important;
     outline-offset: 3px;
-
 }
 
 
-/* ================================
-   ANIMAÇÕES SUAVES
-================================ */
+/* =====================================
+   IMAGENS
+===================================== */
 
-
-button,
-a,
-.card {
-
-    transition: .3s ease;
-
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 
-/* ================================
-   RESPONSIVIDADE TABLET
-================================ */
+/* =====================================
+   REDUZIR ANIMAÇÕES
+===================================== */
 
+@media (prefers-reduced-motion: reduce) {
 
-@media (max-width: 991px) {
-
-
-    .navbar-nav {
-
-        text-align: center;
-
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
     }
 
-
-    .navbar .btn {
-
-        width: 100%;
-
-        margin-bottom: 8px;
-
-    }
-
-
 }
 
 
-/* ================================
-   RESPONSIVIDADE CELULAR
-================================ */
-
+/* =====================================
+   MOBILE
+===================================== */
 
 @media (max-width: 768px) {
 
-
-    body {
-
-        font-size: 17px;
-
-    }
-
-
     h1 {
-
         font-size: 2rem;
-
     }
 
-
     h2 {
-
         font-size: 1.7rem;
-
     }
-
-
-    h3 {
-
-        font-size: 1.2rem;
-
-    }
-
-
-    .card {
-
-        margin-bottom: 20px;
-
-    }
-
-
-}
-
-
-/* ================================
-   CELULARES PEQUENOS
-================================ */
-
-
-@media (max-width: 576px) {
-
-
-    body {
-
-        font-size: 16px;
-
-    }
-
-
-    h1 {
-
-        font-size: 1.8rem;
-
-    }
-
-
-    h2 {
-
-        font-size: 1.5rem;
-
-    }
-
 
     .btn {
-
-        font-size: 15px;
-
-        min-height: 50px;
-
+        width: 100%;
     }
-
-
-}
-
-
-/* ================================
-   MELHORIA PARA LEITURA
-================================ */
-
-
-::selection {
-
-    background: #0d6efd;
-
-    color: white;
 
 }

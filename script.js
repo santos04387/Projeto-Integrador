@@ -1,226 +1,256 @@
-// ========================================
-// PORTAL INCLUSIVO
-// script.js
-// ========================================
-
-"use strict";
-
-// -------------------------------
-// TAMANHO DA FONTE
-// -------------------------------
+// =====================================
+// ACESSIBILIDADE
+// =====================================
 
 let tamanhoFonte = 100;
+let leituraAtual = null;
 
 
-// -------------------------------
+// =====================================
 // AUMENTAR FONTE
-// -------------------------------
+// =====================================
 
 function aumentarFonte() {
 
     if (tamanhoFonte < 160) {
-
         tamanhoFonte += 10;
-
-        document.documentElement.style.fontSize = tamanhoFonte + "%";
-
+        aplicarTamanhoFonte();
     }
 
 }
 
 
-// -------------------------------
+// =====================================
 // DIMINUIR FONTE
-// -------------------------------
+// =====================================
 
 function diminuirFonte() {
 
     if (tamanhoFonte > 70) {
-
         tamanhoFonte -= 10;
-
-        document.documentElement.style.fontSize = tamanhoFonte + "%";
-
+        aplicarTamanhoFonte();
     }
 
 }
-// -------------------------------
-// LEITOR DE TELA
-// -------------------------------
-
-const sintetizador = window.speechSynthesis;
-let falaAtual = null;
 
 
-// -------------------------------
-// LER PÁGINA
-// -------------------------------
+// =====================================
+// APLICAR TAMANHO DA FONTE
+// =====================================
 
-function lerPagina() {
+function aplicarTamanhoFonte() {
 
-    sintetizador.cancel();
+    document.documentElement.style.fontSize = tamanhoFonte + "%";
 
-    const conteudo = document.querySelector("main");
-
-    if (!conteudo) return;
-
-    const texto = conteudo.innerText;
-
-    falaAtual = new SpeechSynthesisUtterance(texto);
-
-    falaAtual.lang = "pt-BR";
-    falaAtual.rate = 1;
-    falaAtual.pitch = 1;
-    falaAtual.volume = 1;
-
-    sintetizador.speak(falaAtual);
+    localStorage.setItem("tamanhoFonte", tamanhoFonte);
 
 }
 
 
-// -------------------------------
-// PARAR LEITURA
-// -------------------------------
-
-function pararLeitura() {
-
-    sintetizador.cancel();
-
-}
-
-// -------------------------------
+// =====================================
 // ALTO CONTRASTE
-// -------------------------------
+// =====================================
 
 function altoContraste() {
 
-    document.body.classList.toggle("altoContraste");
+    document.body.classList.toggle("alto-contraste");
+
+    salvarConfiguracoes();
 
 }
 
-// -------------------------------
-// LER PÁGINA
-// -------------------------------
+
+// =====================================
+// ESCALA DE CINZA
+// =====================================
+
+function escalaCinza() {
+
+    document.body.classList.toggle("escala-cinza");
+
+    salvarConfiguracoes();
+
+}
+
+
+// =====================================
+// DESTACAR LINKS
+// =====================================
+
+function destacarLinks() {
+
+    document.body.classList.toggle("destacar-links");
+
+    salvarConfiguracoes();
+
+}
+
+
+// =====================================
+// ESPAÇAMENTO ENTRE TEXTOS
+// =====================================
+
+function aumentarEspacamento() {
+
+    document.body.classList.toggle("espacamento-texto");
+
+    salvarConfiguracoes();
+
+}
+
+
+// =====================================
+// LEITURA DA PÁGINA
+// =====================================
 
 function lerPagina() {
 
-    sintetizador.cancel();
+    pararLeitura();
 
-    const conteudo = document.querySelector("main");
+    if (!("speechSynthesis" in window)) {
 
-    if (!conteudo) return;
+        alert("Seu navegador não possui suporte à leitura de texto.");
 
-    const texto = conteudo.innerText;
+        return;
 
-    falaAtual = new SpeechSynthesisUtterance(texto);
+    }
 
-    falaAtual.lang = "pt-BR";
-    falaAtual.rate = 1;
-    falaAtual.pitch = 1;
-    falaAtual.volume = 1;
+    const texto = document.querySelector("main").innerText;
 
-    sintetizador.speak(falaAtual);
+    leituraAtual = new SpeechSynthesisUtterance(texto);
+
+    leituraAtual.lang = "pt-BR";
+    leituraAtual.rate = 0.9;
+    leituraAtual.pitch = 1;
+    leituraAtual.volume = 1;
+
+    speechSynthesis.speak(leituraAtual);
 
 }
 
-// -------------------------------
+
+// =====================================
 // PARAR LEITURA
-// -------------------------------
+// =====================================
 
 function pararLeitura() {
 
-    sintetizador.cancel();
+    if ("speechSynthesis" in window) {
+
+        speechSynthesis.cancel();
+
+    }
 
 }
-// ========================================
-// FECHAR MENU AO CLICAR (CELULAR)
-// ========================================
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    const links = document.querySelectorAll(".nav-link");
-    const menu = document.getElementById("menuPrincipal");
+// =====================================
+// FLASHCARDS
+// =====================================
 
-    links.forEach(function (link) {
+function mostrarResposta(card) {
 
-        link.addEventListener("click", function () {
+    const resposta = card.querySelector(".resposta-flashcard");
 
-            if (menu && menu.classList.contains("show")) {
+    if (resposta) {
 
-                const bsCollapse = bootstrap.Collapse.getInstance(menu)
-                    || new bootstrap.Collapse(menu, {
-                        toggle: false
-                    });
-
-                bsCollapse.hide();
-
-            }
-
-        });
-
-    });
-
-});
-
-// ========================================
-// MENSAGEM DE BOAS-VINDAS
-// ========================================
-
-window.addEventListener("load", function () {
-
-    console.log("Portal Inclusivo carregado com sucesso.");
-
-});
-
-// ========================================
-// ATALHOS DO TECLADO
-// ========================================
-
-document.addEventListener("keydown", function (e) {
-
-    // ALT + =
-    // (em muitos teclados o "+" é ALT + =)
-
-    if (e.altKey && (e.key === "+" || e.key === "=")) {
-
-        e.preventDefault();
-        aumentarFonte();
+        resposta.classList.toggle("mostrar");
 
     }
 
-    // ALT + -
+}
 
-    if (e.altKey && e.key === "-") {
 
-        e.preventDefault();
-        diminuirFonte();
+// =====================================
+// RESTAURAR CONFIGURAÇÕES
+// =====================================
+
+function restaurarAcessibilidade() {
+
+    tamanhoFonte = 100;
+
+    document.documentElement.style.fontSize = "100%";
+
+    document.body.classList.remove(
+        "alto-contraste",
+        "escala-cinza",
+        "destacar-links",
+        "espacamento-texto"
+    );
+
+    localStorage.removeItem("tamanhoFonte");
+    localStorage.removeItem("altoContraste");
+    localStorage.removeItem("escalaCinza");
+    localStorage.removeItem("destacarLinks");
+    localStorage.removeItem("espacamentoTexto");
+
+}
+
+
+// =====================================
+// SALVAR CONFIGURAÇÕES
+// =====================================
+
+function salvarConfiguracoes() {
+
+    localStorage.setItem(
+        "altoContraste",
+        document.body.classList.contains("alto-contraste")
+    );
+
+    localStorage.setItem(
+        "escalaCinza",
+        document.body.classList.contains("escala-cinza")
+    );
+
+    localStorage.setItem(
+        "destacarLinks",
+        document.body.classList.contains("destacar-links")
+    );
+
+    localStorage.setItem(
+        "espacamentoTexto",
+        document.body.classList.contains("espacamento-texto")
+    );
+
+}
+
+
+// =====================================
+// CARREGAR CONFIGURAÇÕES
+// =====================================
+
+function carregarConfiguracoes() {
+
+    const fonteSalva = localStorage.getItem("tamanhoFonte");
+
+    if (fonteSalva) {
+
+        tamanhoFonte = Number(fonteSalva);
+
+        document.documentElement.style.fontSize =
+            tamanhoFonte + "%";
 
     }
 
-    // ALT + C
 
-    if (e.altKey && e.key.toLowerCase() === "c") {
-
-        e.preventDefault();
-        altoContraste();
-
+    if (localStorage.getItem("altoContraste") === "true") {
+        document.body.classList.add("alto-contraste");
     }
 
-    // ALT + L
 
-    if (e.altKey && e.key.toLowerCase() === "l") {
-
-        e.preventDefault();
-        lerPagina();
-
+    if (localStorage.getItem("escalaCinza") === "true") {
+        document.body.classList.add("escala-cinza");
     }
 
-    // ESC
 
-    if (e.key === "Escape") {
-
-        pararLeitura();
-
+    if (localStorage.getItem("destacarLinks") === "true") {
+        document.body.classList.add("destacar-links");
     }
 
-});
+
+    if (localStorage.getItem("espacamentoTexto") === "true") {
+        document.body.classList.add("espacamento-texto");
+    }
+
+}
