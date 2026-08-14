@@ -1,185 +1,258 @@
+Claro — abaixo está o **código completo já com a ATIVIDADE 2 adicionada dentro da seção Robótica**, entre os cards de Robótica e a seção de Física.
+
+Também deixei espaços para você inserir as **Figuras 2 e 3, o vídeo e o esquema do Smart Light Vision**. A atividade também será lida pelo botão **🔊 Ouvir**.
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <title>Portal Inclusivo de Estudos</title>
+    <title>Portal Inclusivo de Estudos</title>
 
- <!-- Bootstrap -->
- <link
- href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
- rel="stylesheet"
- >
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
- <style>
+    <style>
 
- /* ===============================
- CONFIGURAÇÕES GERAIS
- =============================== */
+        /* ===============================
+        CONFIGURAÇÕES GERAIS
+        =============================== */
 
- html {
- scroll-behavior: smooth;
- }
+        html {
+            scroll-behavior: smooth;
+        }
 
- body {
- font-size: 100%;
- line-height: 1.6;
- transition: all 0.3s ease;
- }
+        body {
+            font-size: 100%;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
 
- section {
- scroll-margin-top: 80px;
- }
-
-
- /* ===============================
- CARDS
- =============================== */
-
- .card {
- transition: 0.2s;
- }
-
- .card:hover,
- .card:focus {
- transform: translateY(-3px);
- box-shadow: 0 8px 20px rgba(0,0,0,0.2);
- }
+        section {
+            scroll-margin-top: 80px;
+        }
 
 
- /* ===============================
- FLASHCARDS
- =============================== */
+        /* ===============================
+        CARDS
+        =============================== */
 
- .resposta-flashcard {
- display: none;
- margin-top: 15px;
- padding: 15px;
+        .card {
+            transition: 0.2s;
+        }
 
- background-color: #e9f7ef;
- border-left: 5px solid #198754;
-
- border-radius: 5px;
- }
-
- .resposta-flashcard.mostrar {
- display: block;
- }
+        .card:hover,
+        .card:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
 
 
- /* ===============================
- ALTO CONTRASTE
- =============================== */
+        /* ===============================
+        ATIVIDADE 2
+        =============================== */
 
- body.alto-contraste {
- background-color: #000 !important;
- color: #fff !important;
- }
+        .atividade-2 {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            border: 2px solid #0d6efd;
+        }
 
- body.alto-contraste main,
- body.alto-contraste section {
- background-color: #000 !important;
- color: #fff !important;
- }
+        .atividade-2 h3 {
+            color: #0d6efd;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
 
- body.alto-contraste .card {
- background-color: #000 !important;
- color: #fff !important;
- border: 2px solid #fff;
- }
+        .atividade-2 h4 {
+            color: #198754;
+            margin-top: 20px;
+        }
 
- body.alto-contraste p,
- body.alto-contraste h1,
- body.alto-contraste h2,
- body.alto-contraste h3 {
- color: #fff !important;
- }
+        .imagem-atividade {
+            min-height: 180px;
+            background-color: #e9ecef;
+            border: 2px dashed #6c757d;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+        }
 
- body.alto-contraste a {
- color: #ffff00 !important;
- }
+        .video-atividade {
+            background-color: #212529;
+            color: white;
+            min-height: 250px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+        }
 
- body.alto-contraste .resposta-flashcard {
- background-color: #111;
- color: #fff;
- border-color: #ffff00;
- }
-
-
- /* ===============================
- ESCALA DE CINZA
- =============================== */
-
- body.escala-cinza {
- filter: grayscale(100%);
- }
-
-
- /* ===============================
- DESTACAR LINKS
- =============================== */
-
- body.destacar-links a {
- background-color: yellow !important;
- color: black !important;
- text-decoration: underline !important;
- font-weight: bold;
-
- padding: 3px 6px;
- border-radius: 4px;
- }
+        .lista-componentes li {
+            margin-bottom: 8px;
+        }
 
 
- /* ===============================
- ESPAÇAMENTO
- =============================== */
+        /* ===============================
+        FLASHCARDS
+        =============================== */
 
- body.espacamento-texto {
- line-height: 2.2;
- letter-spacing: 0.08em;
- word-spacing: 0.15em;
- }
+        .resposta-flashcard {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e9f7ef;
+            border-left: 5px solid #198754;
+            border-radius: 5px;
+        }
 
- body.espacamento-texto p {
- margin-bottom: 1.5rem;
- }
-
-
- /* ===============================
- FOCO DO TECLADO
- =============================== */
-
- button:focus,
- a:focus,
- .card:focus {
- outline: 4px solid #ffcc00 !important;
- outline-offset: 3px;
- }
+        .resposta-flashcard.mostrar {
+            display: block;
+        }
 
 
- /* ===============================
- BOTÕES
- =============================== */
+        /* ===============================
+        ALTO CONTRASTE
+        =============================== */
 
- .botoes-acessibilidade {
- padding: 15px 0;
- }
+        body.alto-contraste {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+
+        body.alto-contraste main,
+        body.alto-contraste section {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+
+        body.alto-contraste .card,
+        body.alto-contraste .atividade-2 {
+            background-color: #000 !important;
+            color: #fff !important;
+            border: 2px solid #fff;
+        }
+
+        body.alto-contraste p,
+        body.alto-contraste h1,
+        body.alto-contraste h2,
+        body.alto-contraste h3,
+        body.alto-contraste h4 {
+            color: #fff !important;
+        }
+
+        body.alto-contraste a {
+            color: #ffff00 !important;
+        }
+
+        body.alto-contraste .resposta-flashcard {
+            background-color: #111;
+            color: #fff;
+            border-color: #ffff00;
+        }
+
+        body.alto-contraste .imagem-atividade {
+            background-color: #111;
+            border-color: #fff;
+        }
+
+        body.alto-contraste .video-atividade {
+            background-color: #111;
+            border: 2px solid #fff;
+        }
 
 
- /* ===============================
- MOBILE
- =============================== */
+        /* ===============================
+        ESCALA DE CINZA
+        =============================== */
 
- @media (max-width: 768px) {
+        body.escala-cinza {
+            filter: grayscale(100%);
+        }
 
- .botoes-acessibilidade .btn {
- width: 100%;
- }
 
- }
+        /* ===============================
+        DESTACAR LINKS
+        =============================== */
 
- </style>
+        body.destacar-links a {
+            background-color: yellow !important;
+            color: black !important;
+            text-decoration: underline !important;
+            font-weight: bold;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+
+        /* ===============================
+        ESPAÇAMENTO
+        =============================== */
+
+        body.espacamento-texto {
+            line-height: 2.2;
+            letter-spacing: 0.08em;
+            word-spacing: 0.15em;
+        }
+
+        body.espacamento-texto p {
+            margin-bottom: 1.5rem;
+        }
+
+
+        /* ===============================
+        FOCO DO TECLADO
+        =============================== */
+
+        button:focus,
+        a:focus,
+        .card:focus {
+            outline: 4px solid #ffcc00 !important;
+            outline-offset: 3px;
+        }
+
+
+        /* ===============================
+        BOTÕES
+        =============================== */
+
+        .botoes-acessibilidade {
+            padding: 15px 0;
+        }
+
+
+        /* ===============================
+        MOBILE
+        =============================== */
+
+        @media (max-width: 768px) {
+
+            .botoes-acessibilidade .btn {
+                width: 100%;
+            }
+
+            .atividade-2 {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -188,687 +261,1365 @@
 
 
 <!-- ==========================================
- MENU
+MENU
 ========================================== -->
 
 <header>
 
- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
- <div class="container">
+        <div class="container">
 
- <a
- class="navbar-brand fw-bold"
- href="#inicio"
- >
- Portal Inclusivo
- </a>
-
-
- <button
- class="navbar-toggler"
- type="button"
- data-bs-toggle="collapse"
- data-bs-target="#menuPrincipal"
- aria-label="Abrir menu"
- >
-
- <span class="navbar-toggler-icon"></span>
-
- </button>
+            <a
+                class="navbar-brand fw-bold"
+                href="#inicio"
+            >
+                Portal Inclusivo
+            </a>
 
 
- <div
- class="collapse navbar-collapse"
- id="menuPrincipal"
- >
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal"
+                aria-label="Abrir menu"
+            >
 
- <ul class="navbar-nav ms-auto">
+                <span class="navbar-toggler-icon"></span>
 
- <li class="nav-item">
- <a class="nav-link" href="#inicio">
- Início
- </a>
- </li>
-
- <li class="nav-item">
- <a class="nav-link" href="#robotica">
- Robótica
- </a>
- </li>
-
- <li class="nav-item">
- <a class="nav-link" href="#fisica">
- Física
- </a>
- </li>
-
- <!-- ADICIONADO: FAKE NEWS -->
- <li class="nav-item">
- <a class="nav-link" href="#fake-news">
- Fake News
- </a>
- </li>
-
- <li class="nav-item">
- <a class="nav-link" href="#atividades">
- Atividades
- </a>
- </li>
-
- <li class="nav-item">
- <a class="nav-link" href="#contato">
- Contato
- </a>
- </li>
-
- </ul>
-
- </div>
-
- </div>
-
- </nav>
+            </button>
 
 
- <!-- ==========================================
- ACESSIBILIDADE
- ========================================== -->
+            <div
+                class="collapse navbar-collapse"
+                id="menuPrincipal"
+            >
 
- <div class="bg-primary">
+                <ul class="navbar-nav ms-auto">
 
- <div class="container">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">
+                            Início
+                        </a>
+                    </li>
 
- <div
- class="botoes-acessibilidade d-flex flex-wrap gap-2 justify-content-center"
- >
+                    <li class="nav-item">
+                        <a class="nav-link" href="#robotica">
+                            Robótica
+                        </a>
+                    </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="#atividade2">
+                            Atividade 2
+                        </a>
+                    </li>
 
- <!-- AUMENTAR -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fisica">
+                            Física
+                        </a>
+                    </li>
 
- <button
- type="button"
- class="btn btn-success"
- onclick="aumentarFonte()"
- >
- 🔠 A+ Aumentar
- </button>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fake-news">
+                            Fake News
+                        </a>
+                    </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="#atividades">
+                            Atividades
+                        </a>
+                    </li>
 
- <!-- DIMINUIR -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">
+                            Contato
+                        </a>
+                    </li>
 
- <button
- type="button"
- class="btn btn-warning"
- onclick="diminuirFonte()"
- >
- 🔡 A- Diminuir
- </button>
+                </ul>
 
+            </div>
 
- <!-- CONTRASTE -->
+        </div>
 
- <button
- type="button"
- class="btn btn-dark"
- onclick="altoContraste()"
- >
- 🌓 Contraste
- </button>
-
-
- <!-- LER -->
-
- <button
- type="button"
- class="btn btn-info"
- onclick="lerPagina()"
- >
- 🔊 Ouvir
- </button>
-
-
- <!-- PARAR -->
-
- <button
- type="button"
- class="btn btn-danger"
- onclick="pararLeitura()"
- >
- ⏹ Parar
- </button>
+    </nav>
 
 
- <!-- CINZA -->
+    <!-- ==========================================
+    ACESSIBILIDADE
+    ========================================== -->
 
- <button
- type="button"
- class="btn btn-secondary"
- onclick="escalaCinza()"
- >
- ⚫ Cinza
- </button>
+    <div class="bg-primary">
 
+        <div class="container">
 
- <!-- LINKS -->
+            <div
+                class="botoes-acessibilidade d-flex flex-wrap gap-2 justify-content-center"
+            >
 
- <button
- type="button"
- class="btn btn-light"
- onclick="destacarLinks()"
- >
- 🔗 Destacar Links
- </button>
-
-
- <!-- ESPAÇAMENTO -->
-
- <button
- type="button"
- class="btn btn-primary border"
- onclick="aumentarEspacamento()"
- >
- ↔️ Espaçamento
- </button>
+                <button
+                    type="button"
+                    class="btn btn-success"
+                    onclick="aumentarFonte()"
+                >
+                    🔠 A+ Aumentar
+                </button>
 
 
- <!-- RESTAURAR -->
+                <button
+                    type="button"
+                    class="btn btn-warning"
+                    onclick="diminuirFonte()"
+                >
+                    🔡 A- Diminuir
+                </button>
 
- <button
- type="button"
- class="btn btn-outline-light"
- onclick="restaurarAcessibilidade()"
- >
- 🔄 Restaurar
- </button>
 
- </div>
+                <button
+                    type="button"
+                    class="btn btn-dark"
+                    onclick="altoContraste()"
+                >
+                    🌓 Contraste
+                </button>
 
- </div>
 
- </div>
+                <button
+                    type="button"
+                    class="btn btn-info"
+                    onclick="lerPagina()"
+                >
+                    🔊 Ouvir
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    onclick="pararLeitura()"
+                >
+                    ⏹ Parar
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="escalaCinza()"
+                >
+                    ⚫ Cinza
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-light"
+                    onclick="destacarLinks()"
+                >
+                    🔗 Destacar Links
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-primary border"
+                    onclick="aumentarEspacamento()"
+                >
+                    ↔️ Espaçamento
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-outline-light"
+                    onclick="restaurarAcessibilidade()"
+                >
+                    🔄 Restaurar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </header>
 
 
 
 <!-- ==========================================
- CONTEÚDO
+CONTEÚDO
 ========================================== -->
 
 <main>
 
 
- <!-- INÍCIO -->
+    <!-- ==========================================
+    INÍCIO
+    ========================================== -->
 
- <section
- id="inicio"
- class="container mt-5"
- >
+    <section
+        id="inicio"
+        class="container mt-5"
+    >
 
- <h1 class="text-center">
- Portal Inclusivo de Estudos
- </h1>
+        <h1 class="text-center">
+            Portal Inclusivo de Estudos
+        </h1>
 
 
- <p class="lead text-center">
+        <p class="lead text-center">
 
- Bem-vindo ao Portal Inclusivo de Estudos!
+            Bem-vindo ao Portal Inclusivo de Estudos!
 
- Este site foi desenvolvido para facilitar
- o acesso ao conhecimento e promover uma
- experiência de aprendizagem acessível
- para todas as pessoas.
+            Este site foi desenvolvido para facilitar
+            o acesso ao conhecimento e promover uma
+            experiência de aprendizagem acessível
+            para todas as pessoas.
 
- </p>
+        </p>
 
 
- <p class="text-center">
+        <p class="text-center">
 
- Aqui você encontrará conteúdos sobre
- <strong>Robótica</strong>,
- <strong>Física</strong> e
- <strong>Tecnociências</strong>.
+            Aqui você encontrará conteúdos sobre
+            <strong>Robótica</strong>,
+            <strong>Física</strong> e
+            <strong>Tecnociências</strong>.
 
- </p>
+        </p>
 
 
- <img
- src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900"
- class="img-fluid rounded shadow mt-3"
- alt="Estudantes utilizando computadores durante uma aula de tecnologia"
- >
+        <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900"
+            class="img-fluid rounded shadow mt-3"
+            alt="Estudantes utilizando computadores durante uma aula de tecnologia"
+        >
 
- </section>
+    </section>
 
 
 
- <!-- ROBÓTICA -->
+    <!-- ==========================================
+    ROBÓTICA
+    ========================================== -->
 
- <section
- id="robotica"
- class="container mt-5"
- >
+    <section
+        id="robotica"
+        class="container mt-5"
+    >
 
- <h2 class="text-center mb-4">
- Robótica
- </h2>
+        <h2 class="text-center mb-4">
+            Robótica
+        </h2>
 
 
- <p class="text-center mb-5">
+        <p class="text-center mb-5">
 
- A robótica reúne conhecimentos de
- programação, eletrônica, mecânica
- e automação.
+            A robótica reúne conhecimentos de
+            programação, eletrônica, mecânica
+            e automação.
 
- </p>
+        </p>
 
 
- <div class="row">
+        <div class="row">
 
 
- <article class="col-md-4 mb-4">
+            <!-- SENSOR -->
 
- <div class="card h-100">
+            <article class="col-md-4 mb-4">
 
- <div class="card-body">
+                <div class="card h-100">
 
- <h3>Sensores</h3>
+                    <div class="card-body">
 
- <p>
- Os sensores permitem ao robô
- perceber informações do ambiente.
- </p>
+                        <h3>Sensores</h3>
 
- <p>
- Eles podem identificar obstáculos,
- temperatura, luminosidade,
- distância e movimento.
- </p>
+                        <p>
+                            Os sensores permitem ao robô
+                            perceber informações do ambiente.
+                        </p>
 
- </div>
+                        <p>
+                            Eles podem identificar obstáculos,
+                            temperatura, luminosidade,
+                            distância e movimento.
+                        </p>
 
- </div>
+                    </div>
 
- </article>
+                </div>
 
+            </article>
 
- <article class="col-md-4 mb-4">
 
- <div class="card h-100">
+            <!-- MOTORES -->
 
- <div class="card-body">
+            <article class="col-md-4 mb-4">
 
- <h3>Motores</h3>
+                <div class="card h-100">
 
- <p>
- Os motores são responsáveis
- por produzir movimento.
- </p>
+                    <div class="card-body">
 
- <p>
- Eles transformam energia elétrica
- em movimento mecânico.
- </p>
+                        <h3>Motores</h3>
 
- </div>
+                        <p>
+                            Os motores são responsáveis
+                            por produzir movimento.
+                        </p>
 
- </div>
+                        <p>
+                            Eles transformam energia elétrica
+                            em movimento mecânico.
+                        </p>
 
- </article>
+                    </div>
 
+                </div>
 
- <article class="col-md-4 mb-4">
+            </article>
 
- <div class="card h-100">
 
- <div class="card-body">
+            <!-- ARDUINO -->
 
- <h3>Arduino</h3>
+            <article class="col-md-4 mb-4">
 
- <p>
- O Arduino é uma plataforma
- eletrônica utilizada em projetos.
- </p>
+                <div class="card h-100">
 
- <p>
- Ele pode controlar sensores,
- LEDs e motores.
- </p>
+                    <div class="card-body">
 
- </div>
+                        <h3>Arduino</h3>
 
- </div>
+                        <p>
+                            O Arduino é uma plataforma
+                            eletrônica utilizada em projetos.
+                        </p>
 
- </article>
+                        <p>
+                            Ele pode controlar sensores,
+                            LEDs e motores.
+                        </p>
 
+                    </div>
 
- </div>
+                </div>
 
- </section>
+            </article>
 
 
+        </div>
 
- <!-- FÍSICA -->
 
- <section
- id="fisica"
- class="container mt-5"
- >
+        <!-- ==========================================
+        ATIVIDADE 2
+        ========================================== -->
 
- <h2 class="text-center mb-4">
- Física e Tecnociências
- </h2>
+        <section
+            id="atividade2"
+            class="atividade-2"
+        >
 
+            <h2 class="text-center">
+                🤖 Atividade 2 — Controle de intensidade luminosa
+            </h2>
 
- <p class="text-center mb-5">
+            <p class="text-center lead">
+                Arduino, LED e efeitos Fade-In e Fade-Out
+            </p>
 
- A Física ajuda a compreender fenômenos
- presentes na natureza e nas tecnologias.
 
- </p>
+            <!-- 1. APRESENTAÇÃO -->
 
+            <h3>
+                1. Apresentação da atividade
+            </h3>
 
- <div class="row">
+            <p>
+                O objetivo desta atividade foi desenvolver, no Tinkercad,
+                um circuito eletrônico capaz de controlar a intensidade
+                luminosa de um LED utilizando a técnica de
+                <strong>Fade-In e Fade-Out</strong>.
+            </p>
 
+            <p>
+                Essa técnica consiste em aumentar e diminuir gradualmente
+                o brilho do LED por meio do controle PWM
+                (Modulação por Largura de Pulso), permitindo compreender
+                como é possível controlar a iluminação em projetos de
+                robótica e automação.
+            </p>
 
- <article class="col-md-4 mb-4">
+            <p>
+                O circuito foi desenvolvido utilizando uma placa Arduino Uno,
+                um LED, um resistor de 220 Ω e fios de ligação.
+                O LED foi conectado a um pino PWM da placa Arduino para que
+                seu brilho pudesse ser controlado por programação.
+            </p>
 
- <div class="card h-100">
+            <p>
+                Em seguida, foi criado um código no ambiente do Tinkercad
+                para aumentar gradualmente o valor do PWM até o brilho
+                máximo (Fade-In) e, logo após, diminuir esse valor até
+                apagar o LED (Fade-Out), repetindo esse processo continuamente.
+            </p>
 
- <div class="card-body">
+            <p>
+                Durante a simulação, foi possível observar que o LED acendia
+                de forma suave, aumentava sua intensidade luminosa até o
+                máximo e, em seguida, diminuía o brilho lentamente até apagar.
+                Esse comportamento confirmou que o programa estava funcionando
+                corretamente.
+            </p>
 
- <h3>Energia</h3>
+            <p>
+                O resultado obtido foi satisfatório, pois a simulação apresentou
+                exatamente o efeito esperado. A atividade permitiu compreender
+                a importância do controle da iluminação em sistemas eletrônicos
+                e mostrou como esse conhecimento pode ser aplicado em tecnologias
+                assistivas, sistemas inteligentes de iluminação e projetos de
+                robótica voltados para melhorar a acessibilidade e a qualidade
+                de vida das pessoas.
+            </p>
 
- <p>
- Energia é a capacidade de
- produzir transformações.
- </p>
 
- <p>
- Existem diferentes formas de
- energia, como elétrica, térmica,
- química e mecânica.
- </p>
+            <!-- FIGURA 2 -->
 
- </div>
+            <div class="imagem-atividade">
 
- </div>
+                <div>
 
- </article>
+                    <strong>
+                        Figura 2 – Simulação com o LED aumentando o brilho (Fade-In).
+                    </strong>
 
+                    <p class="mt-2 mb-0">
+                        Inserir aqui a imagem da simulação Fade-In.
+                    </p>
 
- <article class="col-md-4 mb-4">
+                </div>
 
- <div class="card h-100">
+            </div>
 
- <div class="card-body">
 
- <h3>Eletricidade</h3>
+            <!-- FIGURA 3 -->
 
- <p>
- A eletricidade está relacionada
- ao movimento e interação de
- cargas elétricas.
- </p>
+            <div class="imagem-atividade">
 
- <p>
- Ela está presente em computadores,
- celulares, lâmpadas e máquinas.
- </p>
+                <div>
 
- </div>
+                    <strong>
+                        Figura 3 – Simulação com o LED diminuindo o brilho (Fade-Out).
+                    </strong>
 
- </div>
+                    <p class="mt-2 mb-0">
+                        Inserir aqui a imagem da simulação Fade-Out.
+                    </p>
 
- </article>
+                </div>
 
+            </div>
 
- <article class="col-md-4 mb-4">
 
- <div class="card h-100">
+            <!-- VÍDEO -->
 
- <div class="card-body">
+            <div class="video-atividade">
 
- <h3>Magnetismo</h3>
+                <div>
 
- <p>
- O magnetismo está relacionado
- aos campos magnéticos.
- </p>
+                    <h4 class="text-white">
+                        🎥 Vídeo – Funcionamento da simulação
+                    </h4>
 
- <p>
- É utilizado em motores,
- alto-falantes e geradores.
- </p>
+                    <p>
+                        Inserir aqui o vídeo gravado demonstrando o LED
+                        realizando os efeitos Fade-In e Fade-Out no Tinkercad.
+                    </p>
 
- </div>
+                </div>
 
- </div>
+            </div>
 
- </article>
 
 
- </div>
+            <!-- 2. EXPLICAÇÃO CIENTÍFICA -->
 
- </section>
+            <h3>
+                2. Explicação científica
+            </h3>
 
+            <p>
+                O LED (Light Emitting Diode), ou diodo emissor de luz,
+                é um componente eletrônico que produz luz quando a
+                corrente elétrica passa por ele.
+            </p>
 
+            <p>
+                Diferentemente das lâmpadas convencionais, o LED possui
+                baixo consumo de energia, maior durabilidade e gera pouco
+                calor, sendo muito utilizado em equipamentos eletrônicos,
+                automação e robótica.
+            </p>
 
- <!-- ==========================================
- FAKE NEWS - ADICIONADO
-========================================== -->
+            <p>
+                A intensidade luminosa é a quantidade de luz emitida por
+                uma fonte em determinada direção. No caso dos LEDs,
+                essa intensidade pode ser controlada variando a quantidade
+                de energia elétrica fornecida ao componente.
+            </p>
 
- <section
- id="fake-news"
- class="container mt-5"
- >
+            <p>
+                Em projetos com Arduino, esse controle normalmente é
+                realizado utilizando a técnica
+                <strong>PWM (Pulse Width Modulation)</strong>,
+                que altera a largura dos pulsos elétricos enviados ao LED,
+                produzindo diferentes níveis de brilho.
+            </p>
 
- <h2 class="text-center mb-4">
- Fake News
- </h2>
+            <p>
+                O controle da iluminação é importante em diversos ambientes,
+                como residências, hospitais, escolas e locais públicos,
+                pois melhora o conforto visual, reduz o consumo de energia
+                e aumenta a segurança das pessoas.
+            </p>
 
+            <p>
+                No cotidiano, a iluminação controlada está presente em
+                luminárias inteligentes, faróis automotivos, telas de
+                celulares, monitores, sistemas de iluminação pública e
+                dispositivos de acessibilidade.
+            </p>
 
- <p class="text-center mb-5">
+            <p>
+                Durante esta atividade, foi possível compreender como o
+                efeito Fade-In e Fade-Out representa uma aplicação prática
+                desse princípio, permitindo que o brilho do LED aumente
+                e diminua de forma gradual.
+            </p>
 
- Fake news são notícias falsas ou informações
- enganosas divulgadas como se fossem verdadeiras.
- Elas podem se espalhar rapidamente pelas redes
- sociais e causar confusão, medo ou influenciar opiniões.
- Por isso, é importante verificar a fonte, a data e
- comparar a informação com sites confiáveis antes
- de compartilhá-la.
 
- </p>
 
- </section>
+            <!-- 3. DEFICIÊNCIA VISUAL -->
 
+            <h3>
+                3. Relação com a deficiência visual
+            </h3>
 
+            <p>
+                A iluminação influencia diretamente a forma como pessoas
+                com deficiência visual ou baixa visão percebem os ambientes.
+                Uma iluminação adequada melhora o contraste entre objetos,
+                facilita a leitura, reduz sombras e permite uma melhor
+                identificação de obstáculos.
+            </p>
 
- <!-- ATIVIDADES -->
+            <p>
+                Quando a iluminação é inadequada, podem surgir dificuldades
+                como cansaço visual, perda de percepção de detalhes,
+                dificuldade para caminhar, maior risco de quedas e desconforto
+                causado pelo excesso ou pela falta de luz.
+            </p>
 
- <section
- id="atividades"
- class="container mt-5"
- >
+            <p>
+                Uma iluminação planejada aumenta a segurança e a autonomia
+                das pessoas, pois permite que elas realizem atividades do
+                cotidiano com mais facilidade, como ler, cozinhar, estudar
+                e se locomover dentro de casa ou em ambientes públicos.
+            </p>
 
- <h2 class="text-center mb-4">
- Atividades e Flashcards
- </h2>
+            <p>
+                Controlar a intensidade da luz é essencial para o desenvolvimento
+                de tecnologias assistivas porque diferentes pessoas possuem
+                necessidades visuais diferentes.
+            </p>
 
+            <p>
+                Sistemas inteligentes podem ajustar automaticamente o brilho
+                conforme a luminosidade do ambiente, proporcionando maior
+                conforto e acessibilidade.
+            </p>
 
- <p class="text-center mb-5">
+            <p>
+                Assim, conhecimentos como o controle do brilho de um LED
+                utilizando PWM podem ser aplicados em soluções reais que
+                melhoram a qualidade de vida das pessoas com deficiência visual.
+            </p>
 
- Clique nos cartões para visualizar
- as respostas.
 
- </p>
 
+            <!-- 4. TECNOLOGIAS -->
 
- <div class="row">
+            <h3>
+                4. Tecnologias existentes
+            </h3>
 
 
- <!-- FLASHCARD 1 -->
+            <div class="card mb-3">
 
- <article class="col-lg-3 col-md-6 mb-4">
+                <div class="card-body">
 
- <div
- class="card h-100"
- tabindex="0"
- role="button"
- onclick="mostrarResposta(this)"
- onkeydown="tecladoFlashcard(event, this)"
- >
+                    <h4>
+                        1. Lupa eletrônica portátil
+                    </h4>
 
- <div class="card-body">
+                    <ul>
 
- 
+                        <li>
+                            <strong>Fabricante:</strong>
+                            Eschenbach Optik.
+                        </li>
 
- <p>
- <strong>
- O que é um sensor?
- </strong>
- </p>
+                        <li>
+                            <strong>Finalidade:</strong>
+                            Ampliar textos e imagens.
+                        </li>
 
- <div class="resposta-flashcard">
+                        <li>
+                            <strong>Princípio científico:</strong>
+                            Controle do brilho por LEDs e ampliação digital.
+                        </li>
 
- <strong>Resposta:</strong>
+                        <li>
+                            <strong>Como melhora a qualidade de vida:</strong>
+                            Facilita a leitura de livros, documentos e embalagens.
+                        </li>
 
- Sensor é um dispositivo capaz
- de detectar informações do
- ambiente, como luz, temperatura,
- distância e movimento.
+                    </ul>
 
- </div>
+                </div>
 
- </div>
+            </div>
 
- </div>
 
- </article>
+            <div class="card mb-3">
 
+                <div class="card-body">
 
- <!-- FLASHCARD 2 -->
+                    <h4>
+                        2. CCTV — Ampliador eletrônico
+                    </h4>
 
- <article class="col-lg-3 col-md-6 mb-4">
+                    <ul>
 
- <div
- class="card h-100"
- tabindex="0"
- role="button"
- onclick="mostrarResposta(this)"
- onkeydown="tecladoFlashcard(event, this)"
- >
+                        <li>
+                            <strong>Fabricante:</strong>
+                            HumanWare.
+                        </li>
 
- <div class="card-body">
+                        <li>
+                            <strong>Finalidade:</strong>
+                            Ampliar textos em uma tela.
+                        </li>
 
- 
+                        <li>
+                            <strong>Princípio científico:</strong>
+                            Câmera digital com iluminação LED ajustável.
+                        </li>
 
- <p>
- <strong>
- O que é energia elétrica?
- </strong>
- </p>
+                        <li>
+                            <strong>Como melhora a qualidade de vida:</strong>
+                            Auxilia estudantes e profissionais com baixa visão.
+                        </li>
 
- <div class="resposta-flashcard">
+                    </ul>
 
- <strong>Resposta:</strong>
+                </div>
 
- É a energia associada ao
- movimento de cargas elétricas
- e utilizada para alimentar
- diversos equipamentos.
+            </div>
 
- </div>
 
- </div>
+            <div class="card mb-3">
 
- </div>
+                <div class="card-body">
 
- </article>
+                    <h4>
+                        3. Luminária inteligente Philips Hue
+                    </h4>
 
+                    <ul>
 
- <!-- FLASHCARD 3 -->
+                        <li>
+                            <strong>Fabricante:</strong>
+                            Philips.
+                        </li>
 
- <article class="col-lg-3 col-md-6 mb-4">
+                        <li>
+                            <strong>Finalidade:</strong>
+                            Ajustar automaticamente a intensidade e a cor da iluminação.
+                        </li>
 
- <div
- class="card h-100"
- tabindex="0"
- role="button"
- onclick="mostrarResposta(this)"
- onkeydown="tecladoFlashcard(event, this)"
- >
+                        <li>
+                            <strong>Princípio científico:</strong>
+                            LEDs controlados eletronicamente.
+                        </li>
 
- <div class="card-body">
+                        <li>
+                            <strong>Como melhora a qualidade de vida:</strong>
+                            Proporciona iluminação confortável conforme a necessidade do usuário.
+                        </li>
 
- 
+                    </ul>
 
- <p>
- <strong>
- Para que serve o Arduino?
- </strong>
- </p>
+                </div>
 
- <div class="resposta-flashcard">
+            </div>
 
- <strong>Resposta:</strong>
 
- O Arduino é utilizado para
- programar e controlar projetos
- eletrônicos, automação e robótica.
+            <div class="card mb-3">
 
- </div>
+                <div class="card-body">
 
- </div>
+                    <h4>
+                        4. OrCam MyEye
+                    </h4>
 
- </div>
+                    <ul>
 
- </article>
+                        <li>
+                            <strong>Fabricante:</strong>
+                            OrCam Technologies.
+                        </li>
 
+                        <li>
+                            <strong>Finalidade:</strong>
+                            Reconhecer textos e objetos.
+                        </li>
 
- <!-- FLASHCARD 4 -->
+                        <li>
+                            <strong>Princípio científico:</strong>
+                            Inteligência Artificial, câmera e sensores de iluminação.
+                        </li>
 
- <article class="col-lg-3 col-md-6 mb-4">
+                        <li>
+                            <strong>Como melhora a qualidade de vida:</strong>
+                            Aumenta a independência de pessoas com deficiência visual.
+                        </li>
 
- <div
- class="card h-100"
- tabindex="0"
- role="button"
- onclick="mostrarResposta(this)"
- onkeydown="tecladoFlashcard(event, this)"
- >
+                    </ul>
 
- <div class="card-body">
+                </div>
 
- 
+            </div>
 
- <p>
- <strong>
- Como funciona um motor elétrico?
- </strong>
- </p>
 
- <div class="resposta-flashcard">
+            <div class="card mb-3">
 
- <strong>Resposta:</strong>
+                <div class="card-body">
 
- Um motor elétrico transforma
- energia elétrica em energia
- mecânica, produzindo movimento.
+                    <h4>
+                        5. Sistema de iluminação inteligente hospitalar
+                    </h4>
 
- </div>
+                    <ul>
 
- </div>
+                        <li>
+                            <strong>Instituição:</strong>
+                            Diversos hospitais utilizam sistemas de iluminação automatizada.
+                        </li>
 
- </div>
+                        <li>
+                            <strong>Finalidade:</strong>
+                            Ajustar automaticamente a iluminação conforme o ambiente.
+                        </li>
 
- </article>
+                        <li>
+                            <strong>Princípio científico:</strong>
+                            Sensores de luminosidade e LEDs controlados por microcontroladores.
+                        </li>
 
+                        <li>
+                            <strong>Como melhora a qualidade de vida:</strong>
+                            Reduz o desconforto visual e melhora a orientação das pessoas.
+                        </li>
 
- </div>
+                    </ul>
 
- </section>
+                </div>
+
+            </div>
+
+
+
+            <!-- 5. NOSSA PROPOSTA -->
+
+            <h3>
+                5. Nossa proposta
+            </h3>
+
+            <h4>
+                💡 Smart Light Vision
+            </h4>
+
+            <h4>
+                Problema
+            </h4>
+
+            <p>
+                Pessoas com baixa visão frequentemente encontram ambientes
+                com iluminação inadequada, dificultando sua locomoção e
+                realização de tarefas.
+            </p>
+
+
+            <h4>
+                Público-alvo
+            </h4>
+
+            <p>
+                Pessoas com deficiência visual, idosos e pessoas com
+                sensibilidade à luz.
+            </p>
+
+
+            <h4>
+                Funcionamento
+            </h4>
+
+            <p>
+                O sistema utiliza sensores de luminosidade conectados a
+                um Arduino para medir a iluminação do ambiente.
+                Sempre que necessário, uma luminária de LED ajusta
+                automaticamente sua intensidade utilizando PWM,
+                oferecendo uma iluminação confortável ao usuário.
+            </p>
+
+
+            <h4>
+                Componentes necessários
+            </h4>
+
+            <ul class="lista-componentes">
+
+                <li>Arduino Uno;</li>
+
+                <li>Sensor de luminosidade (LDR);</li>
+
+                <li>LEDs de alta potência;</li>
+
+                <li>Resistores;</li>
+
+                <li>Fonte de alimentação;</li>
+
+                <li>Cabos de conexão.</li>
+
+            </ul>
+
+
+            <h4>
+                Relação com a atividade
+            </h4>
+
+            <p>
+                Os conhecimentos adquiridos com o efeito Fade-In e Fade-Out
+                permitiram compreender como controlar o brilho de um LED de
+                forma gradual, princípio utilizado na proposta para adaptar
+                automaticamente a iluminação.
+            </p>
+
+
+            <h4>
+                Uso da Inteligência Artificial
+            </h4>
+
+            <p>
+                A Inteligência Artificial poderá analisar os hábitos do usuário,
+                identificar horários, ambientes e níveis ideais de iluminação,
+                realizando ajustes automáticos e personalizados para oferecer
+                maior conforto e acessibilidade.
+            </p>
+
+
+            <!-- ESQUEMA -->
+
+            <div class="imagem-atividade">
+
+                <div>
+
+                    <strong>
+                        Esquema do Smart Light Vision
+                    </strong>
+
+                    <p class="mt-2 mb-0">
+                        Inserir aqui um desenho ou esquema mostrando o Arduino
+                        ligado ao sensor LDR e aos LEDs.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 6. INTELIGÊNCIA ARTIFICIAL -->
+
+            <h3>
+                6. Inteligência Artificial
+            </h3>
+
+            <p>
+                Durante o desenvolvimento deste trabalho foi utilizada a
+                Inteligência Artificial como ferramenta de apoio à pesquisa
+                e organização das informações.
+            </p>
+
+            <p>
+                As principais ferramentas utilizadas foram o ChatGPT e
+                mecanismos de pesquisa na internet.
+            </p>
+
+            <p>
+                Alguns exemplos de perguntas realizadas foram:
+            </p>
+
+            <ul>
+
+                <li>
+                    O que é o efeito Fade-In e Fade-Out?
+                </li>
+
+                <li>
+                    Como funciona o PWM no Arduino?
+                </li>
+
+                <li>
+                    Como a iluminação influencia pessoas com baixa visão?
+                </li>
+
+                <li>
+                    Quais tecnologias utilizam controle da intensidade da luz?
+                </li>
+
+                <li>
+                    Como elaborar uma proposta de tecnologia assistiva?
+                </li>
+
+            </ul>
+
+            <p>
+                As respostas ajudaram na compreensão dos conceitos científicos,
+                na elaboração dos textos e na organização das informações.
+            </p>
+
+            <p>
+                Antes de utilizar as informações, elas foram comparadas com
+                materiais de instituições confiáveis, livros e sites especializados,
+                garantindo a veracidade dos dados apresentados.
+            </p>
+
+
+
+            <!-- 7. CONCLUSÃO -->
+
+            <h3>
+                7. Conclusão
+            </h3>
+
+            <p>
+                A atividade permitiu compreender que o controle da intensidade
+                da iluminação possui grande importância em projetos de robótica
+                e automação.
+            </p>
+
+            <p>
+                Utilizando o Arduino e o efeito Fade-In e Fade-Out, foi possível
+                observar na prática como pequenas variações na intensidade
+                luminosa podem ser controladas por programação.
+            </p>
+
+            <p>
+                As pesquisas realizadas mostraram que esse mesmo princípio é
+                utilizado em diversas tecnologias assistivas destinadas às
+                pessoas com deficiência visual ou baixa visão, proporcionando
+                maior conforto, segurança e autonomia.
+            </p>
+
+            <p>
+                Além disso, foi possível perceber que a combinação entre
+                eletrônica, programação e Inteligência Artificial permite
+                desenvolver soluções cada vez mais eficientes para promover
+                a acessibilidade.
+            </p>
+
+            <p>
+                Concluímos que o conhecimento adquirido durante esta atividade
+                vai além da programação de um LED, demonstrando como a robótica
+                pode contribuir para resolver problemas reais da sociedade e
+                melhorar a qualidade de vida das pessoas.
+            </p>
+
+
+
+            <!-- REFERÊNCIAS -->
+
+            <h3>
+                Referências
+            </h3>
+
+            <ul>
+
+                <li>
+                    ARDUINO. <strong>Arduino Documentation</strong>.
+                </li>
+
+                <li>
+                    TINKERCAD. <strong>Tinkercad Circuits</strong>.
+                </li>
+
+                <li>
+                    BRASIL. Ministério da Saúde.
+                    <strong>Saúde da Pessoa com Deficiência</strong>.
+                </li>
+
+                <li>
+                    ORGANIZAÇÃO MUNDIAL DA SAÚDE (OMS).
+                    <strong>World Report on Vision</strong>.
+                </li>
+
+                <li>
+                    PHILIPS. <strong>Philips Hue</strong>.
+                </li>
+
+                <li>
+                    HUMANWARE. <strong>Produtos para baixa visão</strong>.
+                </li>
+
+                <li>
+                    ESCHENBACH OPTIK.
+                    <strong>Produtos para baixa visão</strong>.
+                </li>
+
+                <li>
+                    ORCAM. <strong>OrCam MyEye</strong>.
+                </li>
+
+            </ul>
+
+        </section>
+
+    </section>
+
+
+
+    <!-- ==========================================
+    FÍSICA
+    ========================================== -->
+
+    <section
+        id="fisica"
+        class="container mt-5"
+    >
+
+        <h2 class="text-center mb-4">
+            Física e Tecnociências
+        </h2>
+
+
+        <p class="text-center mb-5">
+
+            A Física ajuda a compreender fenômenos
+            presentes na natureza e nas tecnologias.
+
+        </p>
+
+
+        <div class="row">
+
+
+            <article class="col-md-4 mb-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <h3>Energia</h3>
+
+                        <p>
+                            Energia é a capacidade de
+                            produzir transformações.
+                        </p>
+
+                        <p>
+                            Existem diferentes formas de
+                            energia, como elétrica, térmica,
+                            química e mecânica.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="col-md-4 mb-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <h3>Eletricidade</h3>
+
+                        <p>
+                            A eletricidade está relacionada
+                            ao movimento e interação de
+                            cargas elétricas.
+                        </p>
+
+                        <p>
+                            Ela está presente em computadores,
+                            celulares, lâmpadas e máquinas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="col-md-4 mb-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <h3>Magnetismo</h3>
+
+                        <p>
+                            O magnetismo está relacionado
+                            aos campos magnéticos.
+                        </p>
+
+                        <p>
+                            É utilizado em motores,
+                            alto-falantes e geradores.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+    FAKE NEWS
+    ========================================== -->
+
+    <section
+        id="fake-news"
+        class="container mt-5"
+    >
+
+        <h2 class="text-center mb-4">
+            Fake News
+        </h2>
+
+
+        <p class="text-center mb-5">
+
+            Fake news são notícias falsas ou informações
+            enganosas divulgadas como se fossem verdadeiras.
+            Elas podem se espalhar rapidamente pelas redes
+            sociais e causar confusão, medo ou influenciar opiniões.
+            Por isso, é importante verificar a fonte, a data e
+            comparar a informação com sites confiáveis antes
+            de compartilhá-la.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ==========================================
+    ATIVIDADES
+    ========================================== -->
+
+    <section
+        id="atividades"
+        class="container mt-5"
+    >
+
+        <h2 class="text-center mb-4">
+            Atividades e Flashcards
+        </h2>
+
+
+        <p class="text-center mb-5">
+
+            Clique nos cartões para visualizar
+            as respostas.
+
+        </p>
+
+
+        <div class="row">
+
+
+            <!-- FLASHCARD 1 -->
+
+            <article class="col-lg-3 col-md-6 mb-4">
+
+                <div
+                    class="card h-100"
+                    tabindex="0"
+                    role="button"
+                    onclick="mostrarResposta(this)"
+                    onkeydown="tecladoFlashcard(event, this)"
+                >
+
+                    <div class="card-body">
+
+                        <p>
+                            <strong>
+                                O que é um sensor?
+                            </strong>
+                        </p>
+
+                        <div class="resposta-flashcard">
+
+                            <strong>Resposta:</strong>
+
+                            Sensor é um dispositivo capaz
+                            de detectar informações do
+                            ambiente, como luz, temperatura,
+                            distância e movimento.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- FLASHCARD 2 -->
+
+            <article class="col-lg-3 col-md-6 mb-4">
+
+                <div
+                    class="card h-100"
+                    tabindex="0"
+                    role="button"
+                    onclick="mostrarResposta(this)"
+                    onkeydown="tecladoFlashcard(event, this)"
+                >
+
+                    <div class="card-body">
+
+                        <p>
+                            <strong>
+                                O que é energia elétrica?
+                            </strong>
+                        </p>
+
+                        <div class="resposta-flashcard">
+
+                            <strong>Resposta:</strong>
+
+                            É a energia associada ao
+                            movimento de cargas elétricas
+                            e utilizada para alimentar
+                            diversos equipamentos.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- FLASHCARD 3 -->
+
+            <article class="col-lg-3 col-md-6 mb-4">
+
+                <div
+                    class="card h-100"
+                    tabindex="0"
+                    role="button"
+                    onclick="mostrarResposta(this)"
+                    onkeydown="tecladoFlashcard(event, this)"
+                >
+
+                    <div class="card-body">
+
+                        <p>
+                            <strong>
+                                Para que serve o Arduino?
+                            </strong>
+                        </p>
+
+                        <div class="resposta-flashcard">
+
+                            <strong>Resposta:</strong>
+
+                            O Arduino é utilizado para
+                            programar e controlar projetos
+                            eletrônicos, automação e robótica.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- FLASHCARD 4 -->
+
+            <article class="col-lg-3 col-md-6 mb-4">
+
+                <div
+                    class="card h-100"
+                    tabindex="0"
+                    role="button"
+                    onclick="mostrarResposta(this)"
+                    onkeydown="tecladoFlashcard(event, this)"
+                >
+
+                    <div class="card-body">
+
+                        <p>
+                            <strong>
+                                Como funciona um motor elétrico?
+                            </strong>
+                        </p>
+
+                        <div class="resposta-flashcard">
+
+                            <strong>Resposta:</strong>
+
+                            Um motor elétrico transforma
+                            energia elétrica em energia
+                            mecânica, produzindo movimento.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
 
 
 </main>
@@ -876,35 +1627,37 @@
 
 
 <!-- ==========================================
- RODAPÉ
+RODAPÉ
 ========================================== -->
 
 <footer
- id="contato"
- class="bg-primary text-white text-center p-4 mt-5"
+    id="contato"
+    class="bg-primary text-white text-center p-4 mt-5"
 >
 
- <h2>
- Contato
- </h2>
+    <h2>
+        Contato
+    </h2>
 
- <p>
- Email: portalinclusivo@email.com
- </p>
+    <p>
+        Email: portalinclusivo@email.com
+    </p>
 
- <p>
- Projeto Integrador -
- Desenvolvimento de Site Acessível
- </p>
+    <p>
+        Projeto Integrador -
+        Desenvolvimento de Site Acessível
+    </p>
 
- <p>
- Integrantes do desenvolvimento do site<br>
- Maria Franciellem Brito Godoi, Bianca Catarino Velozo e Kettlyn Vitoria Santos Correa
- </p>
+    <p>
+        Integrantes do desenvolvimento do site<br>
+        Maria Franciellem Brito Godoi,
+        Bianca Catarino Velozo e
+        Kettlyn Vitoria Santos Correa
+    </p>
 
- <p>
- &copy; 2026 Portal Inclusivo
- </p>
+    <p>
+        &copy; 2026 Portal Inclusivo
+    </p>
 
 </footer>
 
@@ -913,244 +1666,223 @@
 <!-- Bootstrap -->
 
 <script
- src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 
 
 
 <!-- ==========================================
- JAVASCRIPT
+JAVASCRIPT
 ========================================== -->
 
 <script>
 
- /* =====================================
- VARIÁVEIS
- ===================================== */
+    /* =====================================
+    VARIÁVEIS
+    ===================================== */
 
- let tamanhoFonte = 100;
+    let tamanhoFonte = 100;
 
 
 
- /* =====================================
- AUMENTAR FONTE
- ===================================== */
+    /* =====================================
+    AUMENTAR FONTE
+    ===================================== */
 
- function aumentarFonte() {
+    function aumentarFonte() {
 
- if (tamanhoFonte < 180) {
+        if (tamanhoFonte < 180) {
 
- tamanhoFonte += 10;
+            tamanhoFonte += 10;
 
- document.body.style.fontSize =
- tamanhoFonte + "%";
+            document.body.style.fontSize =
+                tamanhoFonte + "%";
 
- }
+        }
 
- }
+    }
 
 
 
- /* =====================================
- DIMINUIR FONTE
- ===================================== */
+    /* =====================================
+    DIMINUIR FONTE
+    ===================================== */
 
- function diminuirFonte() {
+    function diminuirFonte() {
 
- if (tamanhoFonte > 70) {
+        if (tamanhoFonte > 70) {
 
- tamanhoFonte -= 10;
+            tamanhoFonte -= 10;
 
- document.body.style.fontSize =
- tamanhoFonte + "%";
+            document.body.style.fontSize =
+                tamanhoFonte + "%";
 
- }
+        }
 
- }
+    }
 
 
 
- /* =====================================
- ALTO CONTRASTE
- ===================================== */
+    /* =====================================
+    ALTO CONTRASTE
+    ===================================== */
 
- function altoContraste() {
+    function altoContraste() {
 
- document.body.classList.toggle(
- "alto-contraste"
- );
+        document.body.classList.toggle(
+            "alto-contraste"
+        );
 
- }
+    }
 
 
 
- /* =====================================
- ESCALA DE CINZA
- ===================================== */
+    /* =====================================
+    ESCALA DE CINZA
+    ===================================== */
 
- function escalaCinza() {
+    function escalaCinza() {
 
- document.body.classList.toggle(
- "escala-cinza"
- );
+        document.body.classList.toggle(
+            "escala-cinza"
+        );
 
- }
+    }
 
 
 
- /* =====================================
- DESTACAR LINKS
- ===================================== */
+    /* =====================================
+    DESTACAR LINKS
+    ===================================== */
 
- function destacarLinks() {
+    function destacarLinks() {
 
- document.body.classList.toggle(
- "destacar-links"
- );
+        document.body.classList.toggle(
+            "destacar-links"
+        );
 
- }
+    }
 
 
 
- /* =====================================
- ESPAÇAMENTO
- ===================================== */
+    /* =====================================
+    ESPAÇAMENTO
+    ===================================== */
 
- function aumentarEspacamento() {
+    function aumentarEspacamento() {
 
- document.body.classList.toggle(
- "espacamento-texto"
- );
+        document.body.classList.toggle(
+            "espacamento-texto"
+        );
 
- }
+    }
 
 
 
- /* =====================================
- LEITURA DA PÁGINA
- ===================================== */
+    /* =====================================
+    LEITURA DA PÁGINA
+    ===================================== */
 
- function lerPagina() {
+    function lerPagina() {
 
- // Para qualquer leitura anterior
- speechSynthesis.cancel();
+        speechSynthesis.cancel();
 
+        const texto =
+            document.querySelector("main").innerText;
 
- // Pega somente o conteúdo principal
- const texto =
- document.querySelector("main").innerText;
+        const fala =
+            new SpeechSynthesisUtterance(texto);
 
+        fala.lang = "pt-BR";
 
- // Cria a fala
- const fala =
- new SpeechSynthesisUtterance(texto);
+        fala.rate = 0.9;
 
+        fala.pitch = 1;
 
- // Define português do Brasil
- fala.lang = "pt-BR";
+        fala.volume = 1;
 
+        speechSynthesis.speak(fala);
 
- // Velocidade da leitura
- fala.rate = 0.9;
+    }
 
 
- // Tom da voz
- fala.pitch = 1;
 
+    /* =====================================
+    PARAR LEITURA
+    ===================================== */
 
- // Volume
- fala.volume = 1;
+    function pararLeitura() {
 
+        speechSynthesis.cancel();
 
- // Começa a leitura
- speechSynthesis.speak(fala);
+    }
 
- }
 
 
+    /* =====================================
+    FLASHCARD
+    ===================================== */
 
- /* =====================================
- PARAR LEITURA
- ===================================== */
+    function mostrarResposta(card) {
 
- function pararLeitura() {
+        const resposta =
+            card.querySelector(
+                ".resposta-flashcard"
+            );
 
- speechSynthesis.cancel();
+        if (resposta) {
 
- }
+            resposta.classList.toggle(
+                "mostrar"
+            );
 
+        }
 
+    }
 
- /* =====================================
- FLASHCARD
- ===================================== */
 
- function mostrarResposta(card) {
 
- const resposta =
- card.querySelector(
- ".resposta-flashcard"
- );
+    /* =====================================
+    TECLADO DO FLASHCARD
+    ===================================== */
 
+    function tecladoFlashcard(event, card) {
 
- if (resposta) {
+        if (
+            event.key === "Enter" ||
+            event.key === " "
+        ) {
 
- resposta.classList.toggle(
- "mostrar"
- );
+            event.preventDefault();
 
- }
+            mostrarResposta(card);
 
- }
+        }
 
+    }
 
 
- /* =====================================
- TECLADO DO FLASHCARD
- ===================================== */
 
- function tecladoFlashcard(event, card) {
+    /* =====================================
+    RESTAURAR
+    ===================================== */
 
- if (
- event.key === "Enter" ||
- event.key === " "
- ) {
+    function restaurarAcessibilidade() {
 
- event.preventDefault();
+        tamanhoFonte = 100;
 
- mostrarResposta(card);
+        document.body.style.fontSize = "100%";
 
- }
+        document.body.classList.remove(
+            "alto-contraste",
+            "escala-cinza",
+            "destacar-links",
+            "espacamento-texto"
+        );
 
- }
+        speechSynthesis.cancel();
 
-
-
- /* =====================================
- RESTAURAR
- ===================================== */
-
- function restaurarAcessibilidade() {
-
- // Volta fonte para 100%
- tamanhoFonte = 100;
-
- document.body.style.fontSize = "100%";
-
-
- // Remove todos os modos
- document.body.classList.remove(
- "alto-contraste",
- "escala-cinza",
- "destacar-links",
- "espacamento-texto"
- );
-
-
- // Para leitura
- speechSynthesis.cancel();
-
- }
+    }
 
 </script>
 
@@ -1160,4 +1892,4 @@
 </html>
 ```
 
-A seção **Fake News** foi colocada entre **Física** e **Atividades**, e o menu ganhou o botão **Fake News** para levar diretamente até ela. O texto também será incluído automaticamente na função **“🔊 Ouvir”**, porque ela já lê todo o conteúdo dentro de `<main>`.
+**Já está integrado:** menu com **“Atividade 2”**, conteúdo completo dentro de **Robótica**, seção **Smart Light Vision**, espaço para as duas figuras, vídeo, esquema, referências e compatibilidade com **Ouvir, Contraste, A+/A-, Cinza, Espaçamento e Restaurar**.
