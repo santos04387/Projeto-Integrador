@@ -1,12 +1,10 @@
-Claro. Abaixo está o HTML completo, mantendo o código original e adicionando o conteúdo do Grupo 8 – Einstein e a ideia dos fótons dentro de Física e Tecnociências.
-
-Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutura. Mantive as atividades de Robótica como estavam no código que você enviou.
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Portal Inclusivo de Estudos</title>
@@ -18,6 +16,10 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
     >
 
     <style>
+
+        /* ===============================
+        CONFIGURAÇÕES GERAIS
+        =============================== */
 
         html {
             scroll-behavior: smooth;
@@ -33,6 +35,11 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
             scroll-margin-top: 80px;
         }
 
+
+        /* ===============================
+        CARDS
+        =============================== */
+
         .card {
             transition: 0.2s;
         }
@@ -42,6 +49,11 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
+
+
+        /* ===============================
+        ATIVIDADES DE ROBÓTICA
+        =============================== */
 
         .atividade-2 {
             background-color: #f8f9fa;
@@ -92,6 +104,11 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
             margin-bottom: 8px;
         }
 
+
+        /* ===============================
+        FLASHCARDS
+        =============================== */
+
         .resposta-flashcard {
             display: none;
             margin-top: 15px;
@@ -105,7 +122,10 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
             display: block;
         }
 
-        /* ALTO CONTRASTE */
+
+        /* ===============================
+        ALTO CONTRASTE
+        =============================== */
 
         body.alto-contraste {
             background-color: #000 !important;
@@ -153,9 +173,19 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
             border: 2px solid #fff;
         }
 
+
+        /* ===============================
+        ESCALA DE CINZA
+        =============================== */
+
         body.escala-cinza {
             filter: grayscale(100%);
         }
+
+
+        /* ===============================
+        DESTACAR LINKS
+        =============================== */
 
         body.destacar-links a {
             background-color: yellow !important;
@@ -165,6 +195,11 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
             padding: 3px 6px;
             border-radius: 4px;
         }
+
+
+        /* ===============================
+        ESPAÇAMENTO
+        =============================== */
 
         body.espacamento-texto {
             line-height: 2.2;
@@ -176,6 +211,11 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
             margin-bottom: 1.5rem;
         }
 
+
+        /* ===============================
+        FOCO DO TECLADO
+        =============================== */
+
         button:focus,
         a:focus,
         .card:focus {
@@ -183,56 +223,19 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
             outline-offset: 3px;
         }
 
+
+        /* ===============================
+        BOTÕES DE ACESSIBILIDADE
+        =============================== */
+
         .botoes-acessibilidade {
             padding: 15px 0;
         }
 
-        .atividade-fisica {
-            background-color: #f8f9fa;
-            border: 2px solid #198754;
-            border-radius: 15px;
-            padding: 30px;
-            margin-top: 40px;
-        }
 
-        .atividade-fisica h3 {
-            color: #198754;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-
-        .atividade-fisica h4 {
-            color: #0d6efd;
-            margin-top: 25px;
-        }
-
-        .equacao {
-            background-color: #e9ecef;
-            border-left: 5px solid #0d6efd;
-            padding: 15px;
-            margin: 20px 0;
-            font-size: 1.3rem;
-            font-weight: bold;
-            text-align: center;
-            border-radius: 5px;
-        }
-
-        body.alto-contraste .atividade-fisica {
-            background-color: #000 !important;
-            color: #fff !important;
-            border-color: #fff;
-        }
-
-        body.alto-contraste .atividade-fisica h3,
-        body.alto-contraste .atividade-fisica h4 {
-            color: #fff !important;
-        }
-
-        body.alto-contraste .equacao {
-            background-color: #111 !important;
-            color: #fff !important;
-            border-color: #ffff00;
-        }
+        /* ===============================
+        MOBILE
+        =============================== */
 
         @media (max-width: 768px) {
 
@@ -244,17 +247,19 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                 padding: 20px;
             }
 
-            .atividade-fisica {
-                padding: 20px;
-            }
-
         }
 
     </style>
 
 </head>
 
+
 <body>
+
+
+<!-- ==========================================
+MENU
+========================================== -->
 
 <header>
 
@@ -269,6 +274,7 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                 Portal Inclusivo
             </a>
 
+
             <button
                 class="navbar-toggler"
                 type="button"
@@ -276,8 +282,11 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                 data-bs-target="#menuPrincipal"
                 aria-label="Abrir menu"
             >
+
                 <span class="navbar-toggler-icon"></span>
+
             </button>
+
 
             <div
                 class="collapse navbar-collapse"
@@ -299,8 +308,20 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="#robotica1">
+                            Robótica 1
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="#atividade2">
                             Atividade 2
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#robotica3">
+                            Robótica 3
                         </a>
                     </li>
 
@@ -336,6 +357,11 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
 
     </nav>
 
+
+    <!-- ==========================================
+    ACESSIBILIDADE
+    ========================================== -->
+
     <div class="bg-primary">
 
         <div class="container">
@@ -352,6 +378,7 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                     🔠 A+ Aumentar
                 </button>
 
+
                 <button
                     type="button"
                     class="btn btn-warning"
@@ -359,6 +386,7 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                 >
                     🔡 A- Diminuir
                 </button>
+
 
                 <button
                     type="button"
@@ -368,6 +396,7 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                     🌓 Contraste
                 </button>
 
+
                 <button
                     type="button"
                     class="btn btn-info"
@@ -375,6 +404,7 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                 >
                     🔊 Ouvir
                 </button>
+
 
                 <button
                     type="button"
@@ -384,6 +414,7 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                     ⏹ Parar
                 </button>
 
+
                 <button
                     type="button"
                     class="btn btn-secondary"
@@ -391,6 +422,7 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                 >
                     ⚫ Cinza
                 </button>
+
 
                 <button
                     type="button"
@@ -400,6 +432,7 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                     🔗 Destacar Links
                 </button>
 
+
                 <button
                     type="button"
                     class="btn btn-primary border"
@@ -407,6 +440,7 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
                 >
                     ↔️ Espaçamento
                 </button>
+
 
                 <button
                     type="button"
@@ -425,931 +459,1927 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
 </header>
 
 
+
+<!-- ==========================================
+CONTEÚDO
+========================================== -->
+
 <main>
-
-<section
-    id="inicio"
-    class="container mt-5"
->
-
-    <h1 class="text-center">
-        Portal Inclusivo de Estudos
-    </h1>
-
-    <p class="lead text-center">
-        Bem-vindo ao Portal Inclusivo de Estudos!
-        Este site foi desenvolvido para facilitar
-        o acesso ao conhecimento e promover uma
-        experiência de aprendizagem acessível
-        para todas as pessoas.
-    </p>
-
-    <p class="text-center">
-        Aqui você encontrará conteúdos sobre
-        <strong>Robótica</strong>,
-        <strong>Física</strong> e
-        <strong>Tecnociências</strong>.
-    </p>
-
-    <img
-        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900"
-        class="img-fluid rounded shadow mt-3"
-        alt="Estudantes utilizando computadores durante uma aula de tecnologia"
-    >
-
-</section>
-
-
-<section
-    id="robotica"
-    class="container mt-5"
->
-
-    <h2 class="text-center mb-4">
-        Robótica
-    </h2>
-
-    <p class="text-center mb-5">
-        A robótica reúne conhecimentos de
-        programação, eletrônica, mecânica
-        e automação.
-    </p>
-
-    <div class="row">
-
-        <article class="col-md-4 mb-4">
-
-            <div class="card h-100">
-
-                <div class="card-body">
-
-                    <h3>Sensores</h3>
-
-                    <p>
-                        Os sensores permitem ao robô
-                        perceber informações do ambiente.
-                    </p>
-
-                    <p>
-                        Eles podem identificar obstáculos,
-                        temperatura, luminosidade,
-                        distância e movimento.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-        <article class="col-md-4 mb-4">
-
-            <div class="card h-100">
-
-                <div class="card-body">
-
-                    <h3>Motores</h3>
-
-                    <p>
-                        Os motores são responsáveis
-                        por produzir movimento.
-                    </p>
-
-                    <p>
-                        Eles transformam energia elétrica
-                        em movimento mecânico.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-        <article class="col-md-4 mb-4">
-
-            <div class="card h-100">
-
-                <div class="card-body">
-
-                    <h3>Arduino</h3>
-
-                    <p>
-                        O Arduino é uma plataforma
-                        eletrônica utilizada em projetos.
-                    </p>
-
-                    <p>
-                        Ele pode controlar sensores,
-                        LEDs e motores.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-
-    <!-- ATIVIDADE 2 ORIGINAL -->
-
-    <section
-        id="atividade2"
-        class="atividade-2"
-    >
-
-        <h2 class="text-center">
-            🤖 Atividade 2 — Controle de intensidade luminosa
-        </h2>
-
-        <p class="text-center lead">
-            Arduino, LED e efeitos Fade-In e Fade-Out
-        </p>
-
-        <h3>
-            1. Apresentação da atividade
-        </h3>
-
-        <p>
-            O objetivo desta atividade foi desenvolver, no Tinkercad,
-            um circuito eletrônico capaz de controlar a intensidade
-            luminosa de um LED utilizando a técnica de
-            <strong>Fade-In e Fade-Out</strong>.
-        </p>
-
-        <p>
-            Essa técnica consiste em aumentar e diminuir gradualmente
-            o brilho do LED por meio do controle PWM
-            (Modulação por Largura de Pulso), permitindo compreender
-            como é possível controlar a iluminação em projetos de
-            robótica e automação.
-        </p>
-
-        <p>
-            O circuito foi desenvolvido utilizando uma placa Arduino Uno,
-            um LED, um resistor de 220 Ω e fios de ligação.
-            O LED foi conectado a um pino PWM da placa Arduino para que
-            seu brilho pudesse ser controlado por programação.
-        </p>
-
-        <p>
-            Em seguida, foi criado um código no ambiente do Tinkercad
-            para aumentar gradualmente o valor do PWM até o brilho
-            máximo (Fade-In) e, logo após, diminuir esse valor até
-            apagar o LED (Fade-Out), repetindo esse processo continuamente.
-        </p>
-
-        <p>
-            Durante a simulação, foi possível observar que o LED acendia
-            de forma suave, aumentava sua intensidade luminosa até o
-            máximo e, em seguida, diminuía o brilho lentamente até apagar.
-            Esse comportamento confirmou que o programa estava funcionando
-            corretamente.
-        </p>
-
-        <p>
-            O resultado obtido foi satisfatório, pois a simulação apresentou
-            exatamente o efeito esperado. A atividade permitiu compreender
-            a importância do controle da iluminação em sistemas eletrônicos
-            e mostrou como esse conhecimento pode ser aplicado em tecnologias
-            assistivas, sistemas inteligentes de iluminação e projetos de
-            robótica voltados para melhorar a acessibilidade e a qualidade
-            de vida das pessoas.
-        </p>
-
-        <div class="imagem-atividade">
-
-            <div>
-
-                <strong>
-                    Figura 2 – Simulação com o LED aumentando o brilho (Fade-In).
-                </strong>
-
-                <p class="mt-2 mb-0">
-                    Inserir aqui a imagem da simulação Fade-In.
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="imagem-atividade">
-
-            <div>
-
-                <strong>
-                    Figura 3 – Simulação com o LED diminuindo o brilho (Fade-Out).
-                </strong>
-
-                <p class="mt-2 mb-0">
-                    Inserir aqui a imagem da simulação Fade-Out.
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="video-atividade">
-
-            <div>
-
-                <h4 class="text-white">
-                    🎥 Vídeo – Funcionamento da simulação
-                </h4>
-
-                <p>
-                    Inserir aqui o vídeo gravado demonstrando o LED
-                    realizando os efeitos Fade-In e Fade-Out no Tinkercad.
-                </p>
-
-            </div>
-
-        </div>
-
-        <h3>
-            2. Explicação científica
-        </h3>
-
-        <p>
-            O LED (Light Emitting Diode), ou diodo emissor de luz,
-            é um componente eletrônico que produz luz quando a
-            corrente elétrica passa por ele.
-        </p>
-
-        <p>
-            Diferentemente das lâmpadas convencionais, o LED possui
-            baixo consumo de energia, maior durabilidade e gera pouco
-            calor, sendo muito utilizado em equipamentos eletrônicos,
-            automação e robótica.
-        </p>
-
-        <p>
-            A intensidade luminosa é a quantidade de luz emitida por
-            uma fonte em determinada direção. No caso dos LEDs,
-            essa intensidade pode ser controlada variando a quantidade
-            de energia elétrica fornecida ao componente.
-        </p>
-
-        <p>
-            Em projetos com Arduino, esse controle normalmente é
-            realizado utilizando a técnica
-            <strong>PWM (Pulse Width Modulation)</strong>,
-            que altera a largura dos pulsos elétricos enviados ao LED,
-            produzindo diferentes níveis de brilho.
-        </p>
-
-        <p>
-            O controle da iluminação é importante em diversos ambientes,
-            como residências, hospitais, escolas e locais públicos,
-            pois melhora o conforto visual, reduz o consumo de energia
-            e aumenta a segurança das pessoas.
-        </p>
-
-        <p>
-            No cotidiano, a iluminação controlada está presente em
-            luminárias inteligentes, faróis automotivos, telas de
-            celulares, monitores, sistemas de iluminação pública e
-            dispositivos de acessibilidade.
-        </p>
-
-        <p>
-            Durante esta atividade, foi possível compreender como o
-            efeito Fade-In e Fade-Out representa uma aplicação prática
-            desse princípio, permitindo que o brilho do LED aumente
-            e diminua de forma gradual.
-        </p>
-
-        <h3>
-            3. Relação com a deficiência visual
-        </h3>
-
-        <p>
-            A iluminação influencia diretamente a forma como pessoas
-            com deficiência visual ou baixa visão percebem os ambientes.
-            Uma iluminação adequada melhora o contraste entre objetos,
-            facilita a leitura, reduz sombras e permite uma melhor
-            identificação de obstáculos.
-        </p>
-
-        <p>
-            Quando a iluminação é inadequada, podem surgir dificuldades
-            como cansaço visual, perda de percepção de detalhes,
-            dificuldade para caminhar, maior risco de quedas e desconforto
-            causado pelo excesso ou pela falta de luz.
-        </p>
-
-        <p>
-            Uma iluminação planejada aumenta a segurança e a autonomia
-            das pessoas, pois permite que elas realizem atividades do
-            cotidiano com mais facilidade, como ler, cozinhar, estudar
-            e se locomover dentro de casa ou em ambientes públicos.
-        </p>
-
-        <p>
-            Controlar a intensidade da luz é essencial para o desenvolvimento
-            de tecnologias assistivas porque diferentes pessoas possuem
-            necessidades visuais diferentes.
-        </p>
-
-        <p>
-            Sistemas inteligentes podem ajustar automaticamente o brilho
-            conforme a luminosidade do ambiente, proporcionando maior
-            conforto e acessibilidade.
-        </p>
-
-        <p>
-            Assim, conhecimentos como o controle do brilho de um LED
-            utilizando PWM podem ser aplicados em soluções reais que
-            melhoram a qualidade de vida das pessoas com deficiência visual.
-        </p>
-
-    </section>
-
-</section>
-
-
-<!-- FÍSICA E TECNOCIÊNCIAS -->
-
-<section
-    id="fisica"
-    class="container mt-5"
->
-
-    <h2 class="text-center mb-4">
-        Física e Tecnociências
-    </h2>
-
-    <p class="text-center mb-5">
-        A Física ajuda a compreender fenômenos
-        presentes na natureza e nas tecnologias.
-    </p>
-
-    <div class="row">
-
-        <article class="col-md-4 mb-4">
-
-            <div class="card h-100">
-
-                <div class="card-body">
-
-                    <h3>Energia</h3>
-
-                    <p>
-                        Energia é a capacidade de
-                        produzir transformações.
-                    </p>
-
-                    <p>
-                        Existem diferentes formas de
-                        energia, como elétrica, térmica,
-                        química e mecânica.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-        <article class="col-md-4 mb-4">
-
-            <div class="card h-100">
-
-                <div class="card-body">
-
-                    <h3>Eletricidade</h3>
-
-                    <p>
-                        A eletricidade está relacionada
-                        ao movimento e interação de
-                        cargas elétricas.
-                    </p>
-
-                    <p>
-                        Ela está presente em computadores,
-                        celulares, lâmpadas e máquinas.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-        <article class="col-md-4 mb-4">
-
-            <div class="card h-100">
-
-                <div class="card-body">
-
-                    <h3>Magnetismo</h3>
-
-                    <p>
-                        O magnetismo está relacionado
-                        aos campos magnéticos.
-                    </p>
-
-                    <p>
-                        É utilizado em motores,
-                        alto-falantes e geradores.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
 
 
     <!-- ==========================================
-    GRUPO 8 – EINSTEIN E A IDEIA DOS FÓTONS
+    INÍCIO
     ========================================== -->
 
-    <section class="atividade-fisica">
+    <section
+        id="inicio"
+        class="container mt-5"
+    >
 
-        <h2 class="text-center">
-            🔬 Grupo 8 – Einstein e a ideia dos fótons
+        <h1 class="text-center">
+            Portal Inclusivo de Estudos
+        </h1>
+
+
+        <p class="lead text-center">
+
+            Bem-vindo ao Portal Inclusivo de Estudos!
+
+            Este site foi desenvolvido para facilitar
+            o acesso ao conhecimento e promover uma
+            experiência de aprendizagem acessível
+            para todas as pessoas.
+
+        </p>
+
+
+        <p class="text-center">
+
+            Aqui você encontrará conteúdos sobre
+            <strong>Robótica</strong>,
+            <strong>Física</strong> e
+            <strong>Tecnociências</strong>.
+
+        </p>
+
+
+        <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900"
+            class="img-fluid rounded shadow mt-3"
+            alt="Estudantes utilizando computadores durante uma aula de tecnologia"
+        >
+
+    </section>
+
+
+
+    <!-- ==========================================
+    ROBÓTICA
+    ========================================== -->
+
+    <section
+        id="robotica"
+        class="container mt-5"
+    >
+
+        <h2 class="text-center mb-4">
+            Robótica
         </h2>
 
-        <h3>
-            Afinal, o que é a luz?
-        </h3>
 
-        <p>
-            O estudo de Einstein sobre a luz está situado no início do século XX, período em que a Física estava passando por grandes mudanças. Durante o século XIX, muitos experimentos haviam mostrado que a luz apresentava características de onda. A teoria eletromagnética de James Clerk Maxwell, por exemplo, descrevia a luz como uma onda eletromagnética.
+        <p class="text-center mb-5">
+
+            A robótica reúne conhecimentos de
+            programação, eletrônica, mecânica
+            e automação.
+
         </p>
 
-        <p>
-            Porém, alguns experimentos começaram a apresentar resultados difíceis de explicar usando apenas a ideia de que a luz era uma onda.
-        </p>
 
-        <p>
-            Um desses problemas era o efeito fotoelétrico. Os cientistas observaram que, quando uma luz incide sobre determinados metais, ela pode fazer com que elétrons sejam liberados da superfície do material.
-        </p>
+        <div class="row">
 
-        <p>
-            A dificuldade era explicar por que a emissão dos elétrons dependia principalmente da frequência da luz, e não simplesmente de sua intensidade.
-        </p>
 
-        <p>
-            O principal cientista relacionado a essa explicação foi Albert Einstein (1879–1955), físico nascido na Alemanha que posteriormente viveu e trabalhou em outros países.
-        </p>
+            <article class="col-md-4 mb-4">
 
-        <p>
-            Em 1905, Einstein publicou um artigo chamado Sobre um ponto de vista heurístico relativo à produção e transformação da luz. Nesse trabalho, propôs que, em determinadas situações, a luz poderia ser considerada formada por pequenas quantidades discretas de energia.
-        </p>
+                <div class="card h-100">
 
-        <p>
-            Essas quantidades ficaram conhecidas posteriormente como fótons.
-        </p>
+                    <div class="card-body">
 
-        <p>
-            A contribuição de Einstein foi muito importante porque mostrou que a luz, além de apresentar comportamentos típicos de ondas, também poderia apresentar um comportamento associado a partículas.
-        </p>
+                        <h3>Sensores</h3>
 
-        <p>
-            Para entender a ideia de Einstein, podemos imaginar que a luz não entrega sua energia de maneira completamente contínua. Ela pode transferir energia em pequenos "pacotes".
-        </p>
+                        <p>
+                            Os sensores permitem ao robô
+                            perceber informações do ambiente.
+                        </p>
 
-        <p>
-            Einstein propôs que a energia de cada pacote de luz depende da frequência da radiação:
-        </p>
+                        <p>
+                            Eles podem identificar obstáculos,
+                            temperatura, luminosidade,
+                            distância e movimento.
+                        </p>
 
-        <div class="equacao">
-            E = h · f
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="col-md-4 mb-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <h3>Motores</h3>
+
+                        <p>
+                            Os motores são responsáveis
+                            por produzir movimento.
+                        </p>
+
+                        <p>
+                            Eles transformam energia elétrica
+                            em movimento mecânico.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="col-md-4 mb-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <h3>Arduino</h3>
+
+                        <p>
+                            O Arduino é uma plataforma
+                            eletrônica utilizada em projetos.
+                        </p>
+
+                        <p>
+                            Ele pode controlar sensores,
+                            LEDs e motores.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
         </div>
 
-        <p>
-            Nessa expressão:
-        </p>
-
-        <ul>
-            <li><strong>E</strong> é a energia do fóton;</li>
-            <li><strong>h</strong> é a constante de Planck;</li>
-            <li><strong>f</strong> é a frequência da luz.</li>
-        </ul>
-
-        <p>
-            Assim, uma luz de frequência maior possui fótons com maior energia.
-        </p>
-
-        <p>
-            No efeito fotoelétrico, quando um fóton atinge um elétron de um metal, ele pode transferir sua energia para esse elétron. Se a energia recebida for suficiente para vencer a força que mantém o elétron preso ao material, o elétron será liberado.
-        </p>
-
-        <p>
-            Isso também explica por que existe uma frequência mínima, chamada frequência de corte. Se a frequência da luz for muito baixa, seus fótons não terão energia suficiente para arrancar elétrons, mesmo que a intensidade da luz seja aumentada.
-        </p>
-
-        <h3>
-            O efeito fotoelétrico
-        </h3>
-
-        <p>
-            O efeito fotoelétrico havia sido observado experimentalmente antes da explicação de Einstein.
-        </p>
-
-        <p>
-            No final do século XIX, cientistas como Heinrich Hertz e Philipp Lenard realizaram experimentos relacionados ao fenômeno. Eles observaram que a luz podia provocar a emissão de elétrons de certos materiais.
-        </p>
 
-        <p>
-            Os resultados apresentavam características importantes:
-        </p>
 
-        <ul>
-
-            <li>
-                Existia uma frequência mínima para ocorrer a emissão de elétrons. Abaixo dessa frequência, o fenômeno não acontecia, mesmo aumentando a intensidade da luz.
-            </li>
-
-            <li>
-                Quando a frequência era suficientemente alta, a emissão podia ocorrer praticamente sem atraso perceptível.
-            </li>
-
-            <li>
-                Aumentar a intensidade da luz aumentava principalmente a quantidade de elétrons emitidos, enquanto a energia dos elétrons emitidos dependia da frequência da luz.
-            </li>
-
-        </ul>
-
-        <p>
-            Esses resultados eram difíceis de explicar usando somente o modelo clássico de luz como onda.
-        </p>
-
-        <p>
-            A hipótese de Einstein explicava essas observações de maneira mais adequada. Ele considerou que cada fóton possui uma quantidade de energia determinada pela frequência.
-        </p>
-
-        <p>
-            A relação para o efeito fotoelétrico pode ser representada por:
-        </p>
-
-        <div class="equacao">
-            hf = Φ + K
-        </div>
-
-        <p>
-            Em que:
-        </p>
-
-        <ul>
-            <li><strong>hf</strong> é a energia do fóton;</li>
-            <li><strong>Φ</strong> é a função trabalho, ou seja, a energia mínima necessária para retirar o elétron do material;</li>
-            <li><strong>K</strong> é a energia cinética que sobra para o elétron depois de ser liberado.</li>
-        </ul>
-
-        <p>
-            A explicação de Einstein foi posteriormente confirmada por experimentos. Em 1921, Einstein recebeu o Prêmio Nobel de Física, principalmente por sua explicação do efeito fotoelétrico.
-        </p>
-
-        <h3>
-            A importância dos fótons
-        </h3>
-
-        <p>
-            A explicação do efeito fotoelétrico foi importante porque ajudou a mostrar que a luz possui uma natureza mais complexa do que se imaginava.
-        </p>
-
-        <p>
-            Durante muito tempo, existiu uma discussão sobre a luz ser formada por partículas ou ondas. Os experimentos do século XIX favoreceram fortemente a descrição ondulatória da luz. Porém, o efeito fotoelétrico mostrou que determinados fenômenos não podiam ser explicados adequadamente considerando apenas a luz como uma onda clássica.
-        </p>
-
-        <p>
-            A ideia dos fótons ajudou no desenvolvimento da Física Quântica.
-        </p>
-
-        <p>
-            Ela também mostrou que uma mesma entidade física pode apresentar diferentes comportamentos dependendo do fenômeno observado. A luz pode apresentar fenômenos característicos de ondas, como interferência e difração, mas também pode interagir com a matéria em quantidades discretas de energia.
-        </p>
-
-        <h3>
-            A luz na Física moderna
-        </h3>
-
-        <p>
-            Atualmente, sabemos que a luz é uma forma de radiação eletromagnética e que possui uma natureza quântica.
-        </p>
-
-        <p>
-            Na Física moderna, a luz pode ser descrita em termos de fótons, que são os quanta do campo eletromagnético. Cada fóton possui energia relacionada à sua frequência pela equação:
-        </p>
-
-        <div class="equacao">
-            E = hf
-        </div>
-
-        <h3>
-            Aplicações atuais
-        </h3>
-
-        <p>
-            A ideia dos fótons está presente em diversas tecnologias e fenômenos atuais, como:
-        </p>
-
-        <ul>
-
-            <li>painéis solares;</li>
-
-            <li>sensores de luz;</li>
-
-            <li>câmeras digitais;</li>
-
-            <li>células fotoelétricas;</li>
-
-            <li>lasers;</li>
-
-            <li>detectores de radiação;</li>
-
-            <li>tecnologias de comunicação óptica.</li>
-
-        </ul>
-
-        <p>
-            O estudo do efeito fotoelétrico também ajudou a estabelecer uma das bases da Física Quântica, que atualmente é utilizada para compreender fenômenos microscópicos e desenvolver diversas tecnologias.
-        </p>
-
-        <h3>
-            Curiosidade
-        </h3>
-
-        <p>
-            Einstein recebeu o Prêmio Nobel de Física de 1921 não pela famosa teoria da relatividade, mas principalmente por sua contribuição à Física Teórica e, em especial, por sua explicação do efeito fotoelétrico.
-        </p>
-
-        <h3>
-            Fontes consultadas
-        </h3>
-
-        <ul>
-
-            <li>
-                Einstein, A. (1905). On a Heuristic Point of View Concerning the Production and Transformation of Light.
-            </li>
-
-            <li>
-                Nobel Prize. The Nobel Prize in Physics 1921 – Albert Einstein.
-            </li>
-
-            <li>
-                Encyclopaedia Britannica. Photoelectric effect.
-            </li>
-
-            <li>
-                Encyclopaedia Britannica. Albert Einstein.
-            </li>
-
-            <li>
-                HyperPhysics, Georgia State University. The Photoelectric Effect.
-            </li>
-
-        </ul>
-
-        <h3>
-            Como utilizamos a IA?
-        </h3>
-
-        <p>
-            Utilizamos uma ferramenta de inteligência artificial para auxiliar na compreensão da explicação de Einstein para o efeito fotoelétrico, na organização das informações de acordo com os itens solicitados pela atividade e na elaboração de explicações em linguagem adequada ao Ensino Médio.
-        </p>
-
-        <p>
-            As informações foram conferidas e comparadas com outras fontes antes da publicação. A IA foi utilizada como ferramenta de apoio à pesquisa, e não como única fonte de informação.
-        </p>
-
-        <h3>
-            Fontes adicionais
-        </h3>
-
-        <ul>
-
-            <li>
-                Nobel Prize – Albert Einstein, Nobel de Física de 1921
-            </li>
-
-            <li>
-                Nobel Prize – explicação do efeito fotoelétrico
-            </li>
-
-            <li>
-                Encyclopaedia Britannica – Photoelectric effect
-            </li>
-
-        </ul>
-
-        <div class="card mt-4">
-
-            <div class="card-body">
-
-                <h4>
-                    ⚠️ Observação importante
-                </h4>
-
-                <p>
-                    Vale evitar escrever que Einstein simplesmente “descobriu os fótons”. Em 1905, ele propôs a ideia de quanta de luz para explicar determinados fenômenos; o termo “fóton” e a compreensão moderna da luz foram consolidados posteriormente.
-                </p>
+        <!-- ==========================================
+        ROBÓTICA 1
+        ========================================== -->
+
+        <section
+            id="robotica1"
+            class="atividade-2"
+        >
+
+            <h2 class="text-center">
+                🌈 Robótica 1 — Disco de Newton, Luz e Acessibilidade
+            </h2>
+
+            <p class="text-center lead">
+                Estudo da óptica, síntese de cores e tecnologias assistivas
+            </p>
+
+
+            <h3>
+                1. Apresentação da atividade
+            </h3>
+
+            <p>
+                Este projeto teve como objetivo compreender a síntese aditiva
+                das cores e aplicar a óptica na criação de tecnologias de
+                acessibilidade visual. Para isso, o Disco de Newton foi
+                construído utilizando uma base circular de papelão rígido
+                dividida em sete setores iguais, pintados com as cores do
+                espectro visível: vermelho, laranja, amarelo, verde, azul,
+                anil e violeta, e fixada ao eixo de um pequeno motor elétrico
+                de corrente contínua alimentado por pilha.
+            </p>
+
+            <p>
+                O desenvolvimento em sala ocorreu em duas etapas: primeiro,
+                realizamos os testes de velocidade para observar a
+                sobreposição óptica das cores; em seguida, debatemos como
+                a manipulação dessas mesmas frequências de luz permite criar
+                telas digitais com alto contraste e filtros de correção
+                para daltonismo ou baixa visão.
+            </p>
+
+            <p>
+                Como resultado obtido, a rotação rápida do disco provocou
+                a ilusão óptica que unificou as cores em um tom
+                cinzento-esbranquiçado, comprovando experimentalmente
+                os conceitos estudados sobre a composição das cores.
+            </p>
+
+
+            <div class="imagem-atividade">
+
+                <div>
+
+                    <strong>
+                        Figura — Disco de Newton
+                    </strong>
+
+                    <p class="mt-2 mb-2">
+                        Imagem e explicação do experimento.
+                    </p>
+
+                    <a
+                        href="https://www2.ufjf.br/fisicaecidadania/brincando-com-a-fisica/disco-de-newton/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ver imagem e explicação do Disco de Newton
+                    </a>
+
+                </div>
 
             </div>
+
+
+            <h3>
+                2. Explicação científica
+            </h3>
+
+            <p>
+                O físico Isaac Newton (1643–1727) demonstrou que a luz branca
+                é policromática, sendo formada pela combinação das cores do
+                espectro. A decomposição dessa luz pode ocorrer quando um
+                feixe atravessa um prisma de vidro, separando-se em diferentes
+                comprimentos de onda.
+            </p>
+
+            <p>
+                O espectro visível apresenta diferentes cores, tradicionalmente
+                representadas como vermelho, laranja, amarelo, verde, azul,
+                anil e violeta. Cada faixa de frequência sofre um desvio
+                diferente ao atravessar determinados materiais.
+            </p>
+
+            <p>
+                Na retina existem células fotorreceptoras responsáveis pela
+                captação da luz. Os cones participam principalmente da
+                percepção das cores, enquanto outros fotorreceptores estão
+                relacionados à percepção luminosa e à regulação do ciclo
+                circadiano.
+            </p>
+
+            <p>
+                Diferentemente da mistura de pigmentos, a mistura de luzes
+                utiliza síntese aditiva. Quando diferentes componentes
+                luminosos são combinados em determinadas proporções, é possível
+                produzir novas cores e, com a combinação adequada, obter
+                luz branca.
+            </p>
+
+            <p>
+                Quando o Disco de Newton gira rapidamente, as cores passam
+                diante dos olhos em uma sequência muito rápida. O sistema
+                visual não consegue separar cada estímulo individualmente
+                e ocorre uma integração das informações luminosas, produzindo
+                a percepção de uma cor clara e uniforme.
+            </p>
+
+
+            <h3>
+                3. Percepção da luz
+            </h3>
+
+            <p>
+                A percepção da luz é responsável pela formação de imagens
+                e também participa da regulação do ciclo circadiano.
+                As células fotorreceptoras captam a luz que chega à retina
+                e enviam informações ao cérebro, permitindo o reconhecimento
+                de cores, detalhes, movimentos e formas.
+            </p>
+
+            <p>
+                A melanopsina é um fotorreceptor relacionado principalmente
+                à percepção da luz e à regulação do ciclo circadiano,
+                demonstrando que a luz possui funções que vão além da
+                simples formação das imagens.
+            </p>
+
+
+            <h3>
+                4. Como pessoas com baixa visão percebem a luz?
+            </h3>
+
+            <p>
+                Pessoas com baixa visão ainda possuem algum grau de percepção
+                visual, mas podem enxergar de maneira diferente das pessoas
+                com visão considerada normal. Dependendo da condição, podem
+                perceber intensidade luminosa, formas, contrastes e algumas
+                cores com menor nitidez.
+            </p>
+
+            <p>
+                Algumas pessoas precisam de ambientes mais iluminados para
+                enxergar melhor, enquanto outras apresentam sensibilidade
+                excessiva à luz, chamada fotofobia. Por isso, iluminação
+                adequada e bom contraste entre objetos e ambiente são
+                fundamentais.
+            </p>
+
+
+            <h3>
+                5. Todas as pessoas enxergam as cores da mesma maneira?
+            </h3>
+
+            <p>
+                Não. A percepção das cores varia de pessoa para pessoa.
+                Isso pode acontecer devido a diferenças no funcionamento
+                dos cones da retina. Pessoas com daltonismo, por exemplo,
+                podem apresentar dificuldade para distinguir determinadas
+                cores.
+            </p>
+
+            <p>
+                Além disso, idade, doenças oculares e condições de iluminação
+                também podem alterar a forma como as cores são percebidas.
+            </p>
+
+
+            <h3>
+                6. Como a iluminação interfere na percepção dos objetos?
+            </h3>
+
+            <p>
+                A iluminação influencia diretamente a maneira como percebemos
+                os objetos. Uma boa iluminação melhora a visualização das
+                formas, cores, detalhes e contrastes, facilitando atividades
+                como leitura e identificação de pessoas e objetos.
+            </p>
+
+            <p>
+                Já uma iluminação insuficiente ou excessiva pode causar
+                fadiga visual, dificultar a percepção das cores e reduzir
+                a capacidade de distinguir detalhes. A direção e a intensidade
+                da luz também podem criar sombras que alteram a aparência
+                dos objetos.
+            </p>
+
+
+            <h3>
+                7. Importância da formação das cores para a acessibilidade
+            </h3>
+
+            <p>
+                Entender como as cores são formadas e percebidas permite
+                desenvolver tecnologias mais acessíveis para pessoas com
+                deficiência visual ou daltonismo.
+            </p>
+
+            <p>
+                Esse conhecimento ajuda na criação de interfaces com
+                contraste adequado, combinações de cores mais visíveis,
+                sinalizações compreensíveis e recursos digitais que facilitam
+                a leitura e a navegação.
+            </p>
+
+
+            <h3>
+                8. Tecnologias existentes
+            </h3>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        Óculos inteligentes com leitura magnificada
+                    </h4>
+
+                    <p>
+                        <strong>Exemplos:</strong>
+                        Envision Glasses e OrCam MyEye.
+                    </p>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Capturar textos, reconhecer rostos, identificar
+                        objetos, cores e cédulas de dinheiro, convertendo
+                        essas informações visuais em áudio.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Óptica digital, fotoeletricidade, sensores de imagem,
+                        processamento de imagens e Inteligência Artificial.
+                    </p>
+
+                    <p>
+                        <strong>Qualidade de vida:</strong>
+                        Aumenta a autonomia do usuário em atividades como
+                        leitura, identificação de produtos e reconhecimento
+                        de informações presentes no ambiente.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        Lupas eletrônicas portáteis
+                    </h4>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Ampliar textos e imagens em telas digitais,
+                        permitindo também alteração do contraste e
+                        inversão de cores.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Ampliação digital, ajuste de contraste luminoso
+                        e teoria das cores.
+                    </p>
+
+                    <p>
+                        <strong>Qualidade de vida:</strong>
+                        Facilitam a leitura de documentos, livros,
+                        embalagens e outros materiais.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        Sistemas telescópicos para baixa visão
+                    </h4>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Permitir que pessoas com baixa visão grave observem
+                        objetos localizados a médias e longas distâncias.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Óptica geométrica e refração da luz por meio de
+                        sistemas de lentes.
+                    </p>
+
+                    <p>
+                        <strong>Qualidade de vida:</strong>
+                        Auxiliam na orientação, mobilidade, leitura de placas
+                        e acompanhamento de aulas.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        Filtros ópticos seletores de comprimento de onda
+                    </h4>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Reduzir a fotofobia e melhorar o conforto e o
+                        contraste visual.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Espectro eletromagnético e absorção seletiva da luz.
+                    </p>
+
+                    <p>
+                        <strong>Qualidade de vida:</strong>
+                        Podem reduzir desconforto causado pela iluminação
+                        intensa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        Sensores de cor e identificadores portáteis
+                    </h4>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Identificar cores de tecidos, superfícies e objetos.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Reflexão da luz e modelo de cores RGB.
+                    </p>
+
+                    <p>
+                        <strong>Qualidade de vida:</strong>
+                        Podem auxiliar na escolha de roupas, identificação
+                        de objetos e organização pessoal.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h3>
+                9. Nossa proposta — Guia-Cromático Inteligente (GCI)
+            </h3>
+
+            <h4>
+                Problema a ser resolvido
+            </h4>
+
+            <p>
+                Pessoas com baixa visão grave ou dificuldades de percepção
+                de cores podem encontrar obstáculos para identificar cores
+                de roupas, combinar peças, verificar alimentos e reconhecer
+                sinais luminosos.
+            </p>
+
+            <h4>
+                Público-alvo
+            </h4>
+
+            <p>
+                Pessoas com deficiência visual, baixa visão ou distúrbios
+                graves de percepção de cores.
+            </p>
+
+            <h4>
+                Funcionamento da tecnologia
+            </h4>
+
+            <p>
+                O Guia-Cromático Inteligente é um dispositivo portátil em
+                formato de anel ou presilha acoplável a óculos. Ao ser
+                apontado para um objeto, o dispositivo emite uma fonte de
+                luz calibrada e analisa a luz refletida pela superfície.
+            </p>
+
+            <p>
+                O aparelho traduz a cor identificada em áudio e também pode
+                gerar uma resposta tátil por meio de vibrações específicas.
+            </p>
+
+            <h4>
+                Componentes necessários
+            </h4>
+
+            <ul class="lista-componentes">
+
+                <li>Iluminação LED de espectro total;</li>
+                <li>Sensor óptico de cor;</li>
+                <li>Microcontrolador;</li>
+                <li>Módulo de áudio;</li>
+                <li>Atuador háptico;</li>
+                <li>Bateria recarregável.</li>
+
+            </ul>
+
+            <h4>
+                Contribuição dos conhecimentos do Disco de Newton
+            </h4>
+
+            <p>
+                O experimento demonstrou que a luz branca está relacionada
+                à combinação das cores do espectro visível. Esse conceito
+                contribuiu para compreender a importância da iluminação
+                na identificação das cores e no funcionamento de sensores
+                ópticos.
+            </p>
+
+            <h4>
+                Uso da Inteligência Artificial
+            </h4>
+
+            <p>
+                A Inteligência Artificial poderá atuar no reconhecimento
+                de contexto, compensação das condições de iluminação,
+                identificação de objetos e aprendizado das preferências
+                do usuário.
+            </p>
+
+
+            <h3>
+                10. Inteligência Artificial
+            </h3>
+
+            <p>
+                Durante o desenvolvimento deste trabalho, foram utilizadas
+                ferramentas de Inteligência Artificial como apoio à pesquisa,
+                organização e compreensão dos conteúdos.
+            </p>
+
+            <p>
+                Exemplos de perguntas utilizadas foram:
+            </p>
+
+            <ul>
+
+                <li>
+                    O que é o Disco de Newton?
+                </li>
+
+                <li>
+                    Como funciona a síntese aditiva das cores?
+                </li>
+
+                <li>
+                    Como a luz influencia pessoas com baixa visão?
+                </li>
+
+                <li>
+                    Quais tecnologias utilizam óptica para acessibilidade?
+                </li>
+
+                <li>
+                    Como desenvolver uma tecnologia assistiva baseada em cores?
+                </li>
+
+            </ul>
+
+
+            <h3>
+                11. Conclusão
+            </h3>
+
+            <p>
+                A experiência com o Disco de Newton foi fundamental para
+                compreender a luz como um fenômeno relacionado a diferentes
+                comprimentos de onda que formam o espectro visível.
+            </p>
+
+            <p>
+                O estudo também mostrou que a física óptica está presente
+                em diversas tecnologias assistivas, como filtros ópticos,
+                lupas eletrônicas, sistemas telescópicos, sensores de cor
+                e óculos inteligentes.
+            </p>
+
+            <p>
+                Em suma, o conhecimento sobre a luz, suas propriedades e
+                suas cores pode ser utilizado para desenvolver soluções
+                que proporcionem autonomia, segurança e qualidade de vida
+                para pessoas com deficiência visual ou baixa visão.
+            </p>
+
+
+            <h3>
+                12. Referências
+            </h3>
+
+            <ul>
+
+                <li>
+                    BRASIL. Ministério da Saúde. Secretaria de Atenção
+                    à Saúde. <strong>Atenção à pessoa com deficiência
+                    visual.</strong> 2. ed. Brasília: Editora do Ministério
+                    da Saúde, 2014.
+                </li>
+
+                <li>
+                    CARVALHO, Keila Miriam Monteiro de et al.
+                    <strong>Visão subnormal: orientações ao paciente e
+                    à família.</strong> São Paulo: Editora Laramara, 2010.
+                </li>
+
+                <li>
+                    ENVISION. <strong>Envision Glasses.</strong>
+                </li>
+
+                <li>
+                    GALVÃO FILHO, Teófilo Alves.
+                    <strong>Tecnologia assistiva.</strong>
+                    Salvador: EDUFBA, 2009.
+                </li>
+
+                <li>
+                    HALLIDAY, David; RESNICK, Robert; WALKER, Jearl.
+                    <strong>Fundamentos de Física: Óptica e Física
+                    Moderna.</strong> Rio de Janeiro: LTC, 2016.
+                </li>
+
+                <li>
+                    ORCAM TECHNOLOGIES.
+                    <strong>OrCam MyEye.</strong>
+                </li>
+
+                <li>
+                    SILVA, C. C.; MARTINS, R. A.
+                    <strong>A "Nova Teoria sobre Luz e Cores" de Isaac
+                    Newton.</strong> Revista Brasileira de Ensino de Física,
+                    1996.
+                </li>
+
+                <li>
+                    UNIVERSIDADE FEDERAL DO PARÁ.
+                    <strong>Disco de Newton.</strong>
+                    Laboratório de Demonstrações.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- ==========================================
+        ATIVIDADE 2
+        ========================================== -->
+
+        <section
+            id="atividade2"
+            class="atividade-2"
+        >
+
+            <h2 class="text-center">
+                🤖 Atividade 2 — Controle de intensidade luminosa
+            </h2>
+
+            <p class="text-center lead">
+                Arduino, LED e efeitos Fade-In e Fade-Out
+            </p>
+
+
+            <h3>
+                1. Apresentação da atividade
+            </h3>
+
+            <p>
+                O objetivo desta atividade foi desenvolver, no Tinkercad,
+                um circuito eletrônico capaz de controlar a intensidade
+                luminosa de um LED utilizando a técnica de
+                <strong>Fade-In e Fade-Out</strong>.
+            </p>
+
+            <p>
+                Essa técnica consiste em aumentar e diminuir gradualmente
+                o brilho do LED por meio do controle PWM
+                (Modulação por Largura de Pulso), permitindo compreender
+                como é possível controlar a iluminação em projetos de
+                robótica e automação.
+            </p>
+
+            <p>
+                O circuito foi desenvolvido utilizando uma placa Arduino Uno,
+                um LED, um resistor de 220 Ω e fios de ligação.
+                O LED foi conectado a um pino PWM da placa Arduino para que
+                seu brilho pudesse ser controlado por programação.
+            </p>
+
+            <p>
+                Em seguida, foi criado um código no ambiente do Tinkercad
+                para aumentar gradualmente o valor do PWM até o brilho
+                máximo (Fade-In) e, logo após, diminuir esse valor até
+                apagar o LED (Fade-Out), repetindo esse processo continuamente.
+            </p>
+
+            <p>
+                Durante a simulação, foi possível observar que o LED acendia
+                de forma suave, aumentava sua intensidade luminosa até o
+                máximo e, em seguida, diminuía o brilho lentamente até apagar.
+            </p>
+
+
+            <div class="imagem-atividade">
+
+                <div>
+
+                    <strong>
+                        Figura 2 – Simulação com o LED aumentando o brilho
+                        (Fade-In).
+                    </strong>
+
+                    <p class="mt-2 mb-0">
+                        Inserir aqui a imagem da simulação Fade-In.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="imagem-atividade">
+
+                <div>
+
+                    <strong>
+                        Figura 3 – Simulação com o LED diminuindo o brilho
+                        (Fade-Out).
+                    </strong>
+
+                    <p class="mt-2 mb-0">
+                        Inserir aqui a imagem da simulação Fade-Out.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="video-atividade">
+
+                <div>
+
+                    <h4 class="text-white">
+                        🎥 Vídeo – Funcionamento da simulação
+                    </h4>
+
+                    <p>
+                        Inserir aqui o vídeo gravado demonstrando o LED
+                        realizando os efeitos Fade-In e Fade-Out no Tinkercad.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h3>
+                2. Explicação científica
+            </h3>
+
+            <p>
+                O LED (Light Emitting Diode), ou diodo emissor de luz,
+                é um componente eletrônico que produz luz quando a
+                corrente elétrica passa por ele.
+            </p>
+
+            <p>
+                Diferentemente das lâmpadas convencionais, o LED possui
+                baixo consumo de energia, maior durabilidade e gera pouco
+                calor, sendo muito utilizado em equipamentos eletrônicos,
+                automação e robótica.
+            </p>
+
+            <p>
+                A intensidade luminosa é a quantidade de luz emitida por
+                uma fonte em determinada direção. No caso dos LEDs,
+                essa intensidade pode ser controlada variando a quantidade
+                de energia elétrica fornecida ao componente.
+            </p>
+
+            <p>
+                Em projetos com Arduino, esse controle normalmente é
+                realizado utilizando a técnica
+                <strong>PWM (Pulse Width Modulation)</strong>,
+                que altera a largura dos pulsos elétricos enviados ao LED,
+                produzindo diferentes níveis de brilho.
+            </p>
+
+
+            <h3>
+                3. Relação com a deficiência visual
+            </h3>
+
+            <p>
+                A iluminação influencia diretamente a forma como pessoas
+                com deficiência visual ou baixa visão percebem os ambientes.
+                Uma iluminação adequada melhora o contraste entre objetos,
+                facilita a leitura, reduz sombras e permite uma melhor
+                identificação de obstáculos.
+            </p>
+
+            <p>
+                Quando a iluminação é inadequada, podem surgir dificuldades
+                como cansaço visual, perda de percepção de detalhes,
+                dificuldade para caminhar, maior risco de quedas e desconforto
+                causado pelo excesso ou pela falta de luz.
+            </p>
+
+            <p>
+                Controlar a intensidade da luz é essencial para o desenvolvimento
+                de tecnologias assistivas porque diferentes pessoas possuem
+                necessidades visuais diferentes.
+            </p>
+
+
+            <h3>
+                4. Tecnologias existentes
+            </h3>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        Lupa eletrônica portátil
+                    </h4>
+
+                    <p>
+                        <strong>Fabricante:</strong>
+                        Eschenbach Optik.
+                    </p>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Ampliar textos e imagens.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Controle do brilho por LEDs e ampliação digital.
+                    </p>
+
+                    <p>
+                        <strong>Como melhora a qualidade de vida:</strong>
+                        Facilita a leitura de livros, documentos e embalagens.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        CCTV — Ampliador eletrônico
+                    </h4>
+
+                    <p>
+                        <strong>Fabricante:</strong>
+                        HumanWare.
+                    </p>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Ampliar textos em uma tela.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Câmera digital com iluminação LED ajustável.
+                    </p>
+
+                    <p>
+                        <strong>Como melhora a qualidade de vida:</strong>
+                        Auxilia estudantes e profissionais com baixa visão.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        Luminária inteligente Philips Hue
+                    </h4>
+
+                    <p>
+                        <strong>Fabricante:</strong>
+                        Philips.
+                    </p>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Ajustar automaticamente a intensidade e a cor
+                        da iluminação.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        LEDs controlados eletronicamente.
+                    </p>
+
+                    <p>
+                        <strong>Como melhora a qualidade de vida:</strong>
+                        Proporciona iluminação confortável conforme a
+                        necessidade do usuário.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        OrCam MyEye
+                    </h4>
+
+                    <p>
+                        <strong>Fabricante:</strong>
+                        OrCam Technologies.
+                    </p>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Reconhecer textos e objetos.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Inteligência Artificial, câmera e sensores.
+                    </p>
+
+                    <p>
+                        <strong>Como melhora a qualidade de vida:</strong>
+                        Aumenta a independência de pessoas com deficiência
+                        visual.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h3>
+                5. Nossa proposta — Smart Light Vision
+            </h3>
+
+            <h4>
+                Problema
+            </h4>
+
+            <p>
+                Pessoas com baixa visão frequentemente encontram ambientes
+                com iluminação inadequada, dificultando sua locomoção e
+                realização de tarefas.
+            </p>
+
+            <h4>
+                Público-alvo
+            </h4>
+
+            <p>
+                Pessoas com deficiência visual, idosos e pessoas com
+                sensibilidade à luz.
+            </p>
+
+            <h4>
+                Funcionamento
+            </h4>
+
+            <p>
+                O sistema utiliza sensores de luminosidade conectados a
+                um Arduino para medir a iluminação do ambiente. Sempre
+                que necessário, uma luminária de LED ajusta automaticamente
+                sua intensidade utilizando PWM.
+            </p>
+
+            <h4>
+                Componentes necessários
+            </h4>
+
+            <ul class="lista-componentes">
+
+                <li>Arduino Uno;</li>
+                <li>Sensor de luminosidade LDR;</li>
+                <li>LEDs de alta potência;</li>
+                <li>Resistores;</li>
+                <li>Fonte de alimentação;</li>
+                <li>Cabos de conexão.</li>
+
+            </ul>
+
+
+            <h3>
+                6. Inteligência Artificial
+            </h3>
+
+            <p>
+                Durante o desenvolvimento deste trabalho foi utilizada a
+                Inteligência Artificial como ferramenta de apoio à pesquisa
+                e organização das informações.
+            </p>
+
+            <p>
+                As principais ferramentas utilizadas foram o ChatGPT e
+                mecanismos de pesquisa na internet.
+            </p>
+
+
+            <h3>
+                7. Conclusão
+            </h3>
+
+            <p>
+                A atividade permitiu compreender que o controle da intensidade
+                da iluminação possui grande importância em projetos de robótica
+                e automação.
+            </p>
+
+            <p>
+                Utilizando o Arduino e o efeito Fade-In e Fade-Out, foi possível
+                observar na prática como pequenas variações na intensidade
+                luminosa podem ser controladas por programação.
+            </p>
+
+        </section>
+
+
+
+        <!-- ==========================================
+        ROBÓTICA 3
+        ========================================== -->
+
+        <section
+            id="robotica3"
+            class="atividade-2"
+        >
+
+            <h2 class="text-center">
+                🎨 Robótica 3 — LED RGB, Cores e Acessibilidade
+            </h2>
+
+            <p class="text-center lead">
+                Sistema RGB, contraste de cores e tecnologias assistivas
+            </p>
+
+
+            <h3>
+                1. Apresentação da atividade
+            </h3>
+
+            <p>
+                O objetivo desta atividade foi compreender o funcionamento
+                do sistema de cores RGB por meio da montagem e da simulação
+                de um circuito eletrônico no Tinkercad. Durante o
+                desenvolvimento, foi utilizado um LED RGB conectado a uma
+                placa Arduino, resistores e fios de ligação, permitindo
+                controlar as cores emitidas pelo LED através da programação.
+            </p>
+
+            <p>
+                Após a montagem do circuito, foi criada uma programação
+                para variar a intensidade das cores vermelha, verde e azul.
+                Em seguida, foi realizada a simulação no ambiente virtual
+                do Tinkercad para verificar se o circuito estava funcionando
+                corretamente e se as combinações de cores eram exibidas
+                conforme esperado.
+            </p>
+
+            <p>
+                Os testes mostraram que diferentes valores enviados para
+                cada cor produziram novas tonalidades, comprovando o
+                funcionamento da mistura aditiva das cores.
+            </p>
+
+            <p>
+                Ao final da atividade, foi possível compreender a relação
+                entre eletrônica, programação e teoria das cores, além de
+                perceber como esses conhecimentos são utilizados em diversas
+                tecnologias presentes no cotidiano.
+            </p>
+
+
+            <h3>
+                2. Explicação científica
+            </h3>
+
+            <p>
+                O LED RGB é um componente eletrônico formado por três LEDs
+                internos: um vermelho (Red), um verde (Green) e um azul
+                (Blue). Ao controlar a intensidade luminosa de cada um deles,
+                é possível produzir milhares de cores diferentes.
+            </p>
+
+            <p>
+                O modelo RGB é um sistema de cores baseado na luz.
+                Diferentemente das tintas, que utilizam mistura subtrativa,
+                o RGB utiliza a mistura aditiva, na qual as cores são criadas
+                pela combinação da luz emitida pelos três LEDs.
+            </p>
+
+            <p>
+                Quando apenas o LED vermelho é aceso, observa-se a cor
+                vermelha. O verde produz luz verde e o azul produz luz azul.
+                Ao combinar vermelho e verde obtém-se amarelo; vermelho e
+                azul produzem magenta; verde e azul produzem ciano. Quando
+                os três LEDs acendem com intensidade máxima, o resultado é
+                a luz branca.
+            </p>
+
+            <p>
+                Esse princípio é utilizado em monitores, televisores,
+                celulares, painéis de LED e diversos dispositivos eletrônicos.
+            </p>
+
+
+            <h3>
+                3. Cores, contraste e acessibilidade
+            </h3>
+
+            <p>
+                O contraste entre as cores facilita a percepção visual porque
+                aumenta a diferença entre objetos e o fundo, permitindo que
+                pessoas com baixa visão identifiquem textos, placas e
+                informações com maior facilidade.
+            </p>
+
+            <p>
+                A escolha adequada das cores é essencial na comunicação
+                visual, pois combinações com pouco contraste dificultam
+                a leitura e podem causar confusão. Por isso, recomenda-se
+                utilizar combinações de alto contraste, como preto sobre
+                branco ou amarelo sobre preto.
+            </p>
+
+            <p>
+                As cores também auxiliam na orientação em ambientes,
+                sendo utilizadas em placas de sinalização, degraus de
+                escadas, elevadores e corredores para indicar caminhos
+                e alertar sobre possíveis riscos.
+            </p>
+
+            <p>
+                O conhecimento sobre luz e cores contribui para o
+                desenvolvimento de tecnologias assistivas, como aplicativos
+                que reconhecem objetos, sistemas de ampliação de contraste,
+                óculos eletrônicos e dispositivos que convertem informações
+                visuais em sons ou vibrações.
+            </p>
+
+
+            <h3>
+                4. Tecnologias existentes
+            </h3>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        1. OrCam MyEye
+                    </h4>
+
+                    <p>
+                        <strong>Fabricante:</strong>
+                        OrCam Technologies.
+                    </p>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Auxiliar pessoas com deficiência visual na leitura
+                        de textos, reconhecimento de rostos, identificação
+                        de produtos e leitura de placas.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Utiliza câmera de alta resolução, visão computacional
+                        e Inteligência Artificial.
+                    </p>
+
+                    <p>
+                        <strong>Como melhora a qualidade de vida:</strong>
+                        Proporciona maior autonomia nas atividades do dia a dia.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        2. eSight
+                    </h4>
+
+                    <p>
+                        <strong>Fabricante:</strong>
+                        eSight Corporation.
+                    </p>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Melhorar a visão de pessoas com baixa visão por meio
+                        de óculos eletrônicos.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Câmeras capturam imagens e o sistema pode ampliar
+                        detalhes e ajustar contraste e brilho.
+                    </p>
+
+                    <p>
+                        <strong>Como melhora a qualidade de vida:</strong>
+                        Facilita atividades como leitura, estudo e trabalho.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        3. Envision Glasses
+                    </h4>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Ler textos, reconhecer pessoas, identificar objetos
+                        e descrever ambientes.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Combina visão computacional, OCR e Inteligência Artificial.
+                    </p>
+
+                    <p>
+                        <strong>Como melhora a qualidade de vida:</strong>
+                        Permite obter informações do ambiente por meio de áudio.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        4. Colorindo
+                    </h4>
+
+                    <p>
+                        <strong>Fabricante:</strong>
+                        CareTec.
+                    </p>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Identificar cores e diferentes níveis de luminosidade.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Utiliza sensores ópticos para detectar a luz refletida.
+                    </p>
+
+                    <p>
+                        <strong>Como melhora a qualidade de vida:</strong>
+                        Auxilia na escolha de roupas, identificação de objetos
+                        e organização de materiais.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <h4>
+                        5. Lupa eletrônica portátil
+                    </h4>
+
+                    <p>
+                        <strong>Fabricantes:</strong>
+                        Diversas empresas, como HumanWare e Eschenbach Optik.
+                    </p>
+
+                    <p>
+                        <strong>Finalidade:</strong>
+                        Ampliar textos, imagens e objetos para pessoas
+                        com baixa visão.
+                    </p>
+
+                    <p>
+                        <strong>Princípio científico:</strong>
+                        Utiliza câmera digital, ampliação eletrônica e
+                        ajustes de brilho, contraste e cores.
+                    </p>
+
+                    <p>
+                        <strong>Como melhora a qualidade de vida:</strong>
+                        Permite leitura com maior conforto e autonomia.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h3>
+                5. Nossa proposta — Smart Color Assist
+            </h3>
+
+            <h4>
+                Problema
+            </h4>
+
+            <p>
+                Pessoas com baixa visão encontram dificuldades para
+                identificar placas, objetos e sinais com baixo contraste.
+            </p>
+
+            <h4>
+                Público-alvo
+            </h4>
+
+            <p>
+                Pessoas com deficiência visual ou baixa visão.
+            </p>
+
+            <h4>
+                Funcionamento
+            </h4>
+
+            <p>
+                Um dispositivo equipado com câmera identifica objetos e
+                analisa o contraste das cores. Quando detecta uma informação
+                importante, transmite instruções por áudio ou vibração ao usuário.
+            </p>
+
+            <h4>
+                Componentes necessários
+            </h4>
+
+            <ul class="lista-componentes">
+
+                <li>Arduino ou ESP32;</li>
+                <li>Câmera;</li>
+                <li>Sensor de luminosidade;</li>
+                <li>Bateria;</li>
+                <li>Alto-falante ou fone de ouvido;</li>
+                <li>Módulo Bluetooth;</li>
+                <li>Aplicativo para smartphone.</li>
+
+            </ul>
+
+            <p>
+                Os conhecimentos sobre luz e cores permitiram compreender
+                como o contraste facilita a identificação de objetos e como
+                o sistema RGB pode ser utilizado para destacar informações
+                importantes.
+            </p>
+
+            <p>
+                A Inteligência Artificial poderá reconhecer placas, textos,
+                obstáculos e objetos em tempo real, aumentando a precisão
+                das informações fornecidas ao usuário e tornando a tecnologia
+                mais eficiente.
+            </p>
+
+
+            <h3>
+                6. Inteligência Artificial
+            </h3>
+
+            <p>
+                Durante o desenvolvimento deste trabalho, utilizamos a
+                ferramenta de Inteligência Artificial ChatGPT para auxiliar
+                na pesquisa e na organização das informações.
+            </p>
+
+            <p>
+                Os principais prompts realizados foram:
+            </p>
+
+            <ul>
+
+                <li>
+                    "Explique a importância da luz na formação das cores."
+                </li>
+
+                <li>
+                    "Como pessoas com deficiência visual utilizam tecnologias
+                    de acessibilidade?"
+                </li>
+
+                <li>
+                    "Quais tecnologias utilizam luz e cores para ajudar
+                    pessoas com baixa visão?"
+                </li>
+
+                <li>
+                    "Faça um resumo sobre luz, cores e acessibilidade."
+                </li>
+
+            </ul>
+
+            <p>
+                As respostas fornecidas pela IA ajudaram a compreender
+                os conceitos de forma mais clara, organizar as ideias
+                e elaborar os textos do trabalho.
+            </p>
+
+            <p>
+                Antes de utilizar as informações, verificamos se elas
+                estavam corretas por meio de pesquisas em sites confiáveis
+                sobre ciência e tecnologia.
+            </p>
+
+
+            <h3>
+                7. Conclusão
+            </h3>
+
+            <p>
+                Durante esta atividade, aprendemos que a luz e as cores
+                são fundamentais para o funcionamento de diversas tecnologias
+                que promovem a acessibilidade para pessoas com deficiência
+                visual ou baixa visão.
+            </p>
+
+            <p>
+                Compreendemos que recursos como alto contraste, sinalizações
+                luminosas, leitores de tela com reconhecimento de imagens
+                e outros dispositivos tecnológicos contribuem para
+                proporcionar mais autonomia, segurança e inclusão.
+            </p>
+
+            <p>
+                A pesquisa também mostrou que o conhecimento científico
+                sobre a luz e as cores vai além da teoria, sendo aplicado
+                no desenvolvimento de soluções que melhoram a qualidade
+                de vida das pessoas.
+            </p>
+
+
+            <h3>
+                8. Referências
+            </h3>
+
+            <ul>
+
+                <li>
+                    OPENAI. <strong>ChatGPT.</strong>
+                </li>
+
+                <li>
+                    BRASIL. Ministério da Educação.
+                    <strong>Portal do Professor.</strong>
+                </li>
+
+                <li>
+                    SOCIEDADE BRASILEIRA DE FÍSICA.
+                    <strong>Luz e cores.</strong>
+                </li>
+
+                <li>
+                    FUNDAÇÃO DORINA NOWILL PARA CEGOS.
+                    <strong>Tecnologias e acessibilidade para pessoas
+                    com deficiência visual.</strong>
+                </li>
+
+            </ul>
+
+        </section>
+
+    </section>
+
+
+
+    <!-- ==========================================
+    FÍSICA
+    ========================================== -->
+
+    <section
+        id="fisica"
+        class="container mt-5"
+    >
+
+        <h2 class="text-center mb-4">
+            Física e Tecnociências
+        </h2>
+
+        <p class="text-center mb-5">
+
+            A Física ajuda a compreender fenômenos
+            presentes na natureza e nas tecnologias.
+
+        </p>
+
+
+        <div class="row">
+
+
+            <article class="col-md-4 mb-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <h3>Energia</h3>
+
+                        <p>
+                            Energia é a capacidade de
+                            produzir transformações.
+                        </p>
+
+                        <p>
+                            Existem diferentes formas de
+                            energia, como elétrica, térmica,
+                            química e mecânica.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="col-md-4 mb-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <h3>Eletricidade</h3>
+
+                        <p>
+                            A eletricidade está relacionada
+                            ao movimento e interação de
+                            cargas elétricas.
+                        </p>
+
+                        <p>
+                            Ela está presente em computadores,
+                            celulares, lâmpadas e máquinas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="col-md-4 mb-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <h3>Magnetismo</h3>
+
+                        <p>
+                            O magnetismo está relacionado
+                            aos campos magnéticos.
+                        </p>
+
+                        <p>
+                            É utilizado em motores,
+                            alto-falantes e geradores.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
 
         </div>
 
     </section>
 
 
-</section>
+
+    <!-- ==========================================
+    FAKE NEWS
+    ========================================== -->
+
+    <section
+        id="fake-news"
+        class="container mt-5"
+    >
+
+        <h2 class="text-center mb-4">
+            Fake News
+        </h2>
+
+        <p class="text-center mb-5">
+
+            Fake news são notícias falsas ou informações
+            enganosas divulgadas como se fossem verdadeiras.
+            Elas podem se espalhar rapidamente pelas redes
+            sociais e causar confusão, medo ou influenciar opiniões.
+            Por isso, é importante verificar a fonte, a data e
+            comparar a informação com sites confiáveis antes
+            de compartilhá-la.
+
+        </p>
+
+    </section>
 
 
-<section
-    id="fake-news"
-    class="container mt-5"
->
 
-    <h2 class="text-center mb-4">
-        Fake News
-    </h2>
+    <!-- ==========================================
+    ATIVIDADES E FLASHCARDS
+    ========================================== -->
 
-    <p class="text-center mb-5">
+    <section
+        id="atividades"
+        class="container mt-5"
+    >
 
-        Fake news são notícias falsas ou informações
-        enganosas divulgadas como se fossem verdadeiras.
-        Elas podem se espalhar rapidamente pelas redes
-        sociais e causar confusão, medo ou influenciar opiniões.
-        Por isso, é importante verificar a fonte, a data e
-        comparar a informação com sites confiáveis antes
-        de compartilhá-la.
+        <h2 class="text-center mb-4">
+            Atividades e Flashcards
+        </h2>
 
-    </p>
+        <p class="text-center mb-5">
 
-</section>
+            Clique nos cartões para visualizar
+            as respostas.
+
+        </p>
 
 
-<section
-    id="atividades"
-    class="container mt-5"
->
-
-    <h2 class="text-center mb-4">
-        Atividades e Flashcards
-    </h2>
-
-    <p class="text-center mb-5">
-        Clique nos cartões para visualizar
-        as respostas.
-    </p>
-
-    <div class="row">
-
-        <article class="col-lg-3 col-md-6 mb-4">
-
-            <div
-                class="card h-100"
-                tabindex="0"
-                role="button"
-                onclick="mostrarResposta(this)"
-                onkeydown="tecladoFlashcard(event, this)"
-            >
-
-                <div class="card-body">
-
-                    <p>
-                        <strong>
-                            O que é um sensor?
-                        </strong>
-                    </p>
-
-                    <div class="resposta-flashcard">
-
-                        <strong>Resposta:</strong>
-
-                        Sensor é um dispositivo capaz
-                        de detectar informações do
-                        ambiente, como luz, temperatura,
-                        distância e movimento.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </article>
+        <div class="row">
 
 
-        <article class="col-lg-3 col-md-6 mb-4">
+            <article class="col-lg-3 col-md-6 mb-4">
 
-            <div
-                class="card h-100"
-                tabindex="0"
-                role="button"
-                onclick="mostrarResposta(this)"
-                onkeydown="tecladoFlashcard(event, this)"
-            >
+                <div
+                    class="card h-100"
+                    tabindex="0"
+                    role="button"
+                    onclick="mostrarResposta(this)"
+                    onkeydown="tecladoFlashcard(event, this)"
+                >
 
-                <div class="card-body">
+                    <div class="card-body">
 
-                    <p>
-                        <strong>
-                            O que é energia elétrica?
-                        </strong>
-                    </p>
+                        <p>
+                            <strong>
+                                O que é um sensor?
+                            </strong>
+                        </p>
 
-                    <div class="resposta-flashcard">
+                        <div class="resposta-flashcard">
 
-                        <strong>Resposta:</strong>
+                            <strong>Resposta:</strong>
 
-                        É a energia associada ao
-                        movimento de cargas elétricas
-                        e utilizada para alimentar
-                        diversos equipamentos.
+                            Sensor é um dispositivo capaz
+                            de detectar informações do
+                            ambiente, como luz, temperatura,
+                            distância e movimento.
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
-
-        </article>
+            </article>
 
 
-        <article class="col-lg-3 col-md-6 mb-4">
+            <article class="col-lg-3 col-md-6 mb-4">
 
-            <div
-                class="card h-100"
-                tabindex="0"
-                role="button"
-                onclick="mostrarResposta(this)"
-                onkeydown="tecladoFlashcard(event, this)"
-            >
+                <div
+                    class="card h-100"
+                    tabindex="0"
+                    role="button"
+                    onclick="mostrarResposta(this)"
+                    onkeydown="tecladoFlashcard(event, this)"
+                >
 
-                <div class="card-body">
+                    <div class="card-body">
 
-                    <p>
-                        <strong>
-                            Para que serve o Arduino?
-                        </strong>
-                    </p>
+                        <p>
+                            <strong>
+                                O que é energia elétrica?
+                            </strong>
+                        </p>
 
-                    <div class="resposta-flashcard">
+                        <div class="resposta-flashcard">
 
-                        <strong>Resposta:</strong>
+                            <strong>Resposta:</strong>
 
-                        O Arduino é utilizado para
-                        programar e controlar projetos
-                        eletrônicos, automação e robótica.
+                            É a energia associada ao
+                            movimento de cargas elétricas
+                            e utilizada para alimentar
+                            diversos equipamentos.
 
-                    </div>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <article class="col-lg-3 col-md-6 mb-4">
-
-            <div
-                class="card h-100"
-                tabindex="0"
-                role="button"
-                onclick="mostrarResposta(this)"
-                onkeydown="tecladoFlashcard(event, this)"
-            >
-
-                <div class="card-body">
-
-                    <p>
-                        <strong>
-                            Como funciona um motor elétrico?
-                        </strong>
-                    </p>
-
-                    <div class="resposta-flashcard">
-
-                        <strong>Resposta:</strong>
-
-                        Um motor elétrico transforma
-                        energia elétrica em energia
-                        mecânica, produzindo movimento.
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
+            </article>
 
-        </article>
 
-    </div>
+            <article class="col-lg-3 col-md-6 mb-4">
 
-</section>
+                <div
+                    class="card h-100"
+                    tabindex="0"
+                    role="button"
+                    onclick="mostrarResposta(this)"
+                    onkeydown="tecladoFlashcard(event, this)"
+                >
+
+                    <div class="card-body">
+
+                        <p>
+                            <strong>
+                                Para que serve o Arduino?
+                            </strong>
+                        </p>
+
+                        <div class="resposta-flashcard">
+
+                            <strong>Resposta:</strong>
+
+                            O Arduino é utilizado para
+                            programar e controlar projetos
+                            eletrônicos, automação e robótica.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="col-lg-3 col-md-6 mb-4">
+
+                <div
+                    class="card h-100"
+                    tabindex="0"
+                    role="button"
+                    onclick="mostrarResposta(this)"
+                    onkeydown="tecladoFlashcard(event, this)"
+                >
+
+                    <div class="card-body">
+
+                        <p>
+                            <strong>
+                                Como funciona um motor elétrico?
+                            </strong>
+                        </p>
+
+                        <div class="resposta-flashcard">
+
+                            <strong>Resposta:</strong>
+
+                            Um motor elétrico transforma
+                            energia elétrica em energia
+                            mecânica, produzindo movimento.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
 
 </main>
 
+
+
+<!-- ==========================================
+RODAPÉ
+========================================== -->
 
 <footer
     id="contato"
@@ -1383,14 +2413,45 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
 </footer>
 
 
+
+<!-- Bootstrap -->
+
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 
 
+
+<!-- ==========================================
+JAVASCRIPT
+========================================== -->
+
 <script>
 
+    /* =====================================
+    VARIÁVEIS
+    ===================================== */
+
     let tamanhoFonte = 100;
+
+
+
+    /* =====================================
+    ATUALIZAR FONTE
+    ===================================== */
+
+    function atualizarFonte() {
+
+        document.documentElement.style.fontSize =
+            tamanhoFonte + "%";
+
+    }
+
+
+
+    /* =====================================
+    AUMENTAR FONTE
+    ===================================== */
 
     function aumentarFonte() {
 
@@ -1398,13 +2459,17 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
 
             tamanhoFonte += 10;
 
-            document.body.style.fontSize =
-                tamanhoFonte + "%";
+            atualizarFonte();
 
         }
 
     }
 
+
+
+    /* =====================================
+    DIMINUIR FONTE
+    ===================================== */
 
     function diminuirFonte() {
 
@@ -1412,13 +2477,17 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
 
             tamanhoFonte -= 10;
 
-            document.body.style.fontSize =
-                tamanhoFonte + "%";
+            atualizarFonte();
 
         }
 
     }
 
+
+
+    /* =====================================
+    ALTO CONTRASTE
+    ===================================== */
 
     function altoContraste() {
 
@@ -1429,6 +2498,11 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
     }
 
 
+
+    /* =====================================
+    ESCALA DE CINZA
+    ===================================== */
+
     function escalaCinza() {
 
         document.body.classList.toggle(
@@ -1437,6 +2511,11 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
 
     }
 
+
+
+    /* =====================================
+    DESTACAR LINKS
+    ===================================== */
 
     function destacarLinks() {
 
@@ -1447,6 +2526,11 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
     }
 
 
+
+    /* =====================================
+    ESPAÇAMENTO
+    ===================================== */
+
     function aumentarEspacamento() {
 
         document.body.classList.toggle(
@@ -1456,39 +2540,130 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
     }
 
 
+
+    /* =====================================
+    LEITURA DA PÁGINA
+    ===================================== */
+
     function lerPagina() {
 
-        if (!("speechSynthesis" in window)) {
-            alert("A leitura de texto não é compatível com este navegador.");
+        pararLeitura();
+
+        const elemento =
+            document.querySelector("main");
+
+        if (!elemento) {
             return;
         }
 
-        speechSynthesis.cancel();
-
         const texto =
-            document.querySelector("main").innerText;
+            elemento.innerText
+            .replace(/\s+/g, " ")
+            .trim();
 
-        const fala =
-            new SpeechSynthesisUtterance(texto);
+        if (!texto) {
+            return;
+        }
 
-        fala.lang = "pt-BR";
-        fala.rate = 0.9;
-        fala.pitch = 1;
-        fala.volume = 1;
+        /*
+        Divide o texto em partes menores.
+        Isso evita que o navegador interrompa
+        a leitura de uma página muito grande.
+        */
 
-        speechSynthesis.speak(fala);
+        const tamanhoBloco = 250;
+
+        const partes = [];
+
+        for (
+            let i = 0;
+            i < texto.length;
+            i += tamanhoBloco
+        ) {
+
+            partes.push(
+                texto.substring(
+                    i,
+                    i + tamanhoBloco
+                )
+            );
+
+        }
+
+
+        function falarParte(indice) {
+
+            if (
+                indice >= partes.length ||
+                !("speechSynthesis" in window)
+            ) {
+
+                return;
+
+            }
+
+
+            const fala =
+                new SpeechSynthesisUtterance(
+                    partes[indice]
+                );
+
+
+            fala.lang = "pt-BR";
+
+            fala.rate = 0.9;
+
+            fala.pitch = 1;
+
+            fala.volume = 1;
+
+
+            fala.onend = function () {
+
+                falarParte(indice + 1);
+
+            };
+
+
+            fala.onerror = function () {
+
+                falarParte(indice + 1);
+
+            };
+
+
+            speechSynthesis.speak(fala);
+
+        }
+
+
+        falarParte(0);
 
     }
 
 
+
+    /* =====================================
+    PARAR LEITURA
+    ===================================== */
+
     function pararLeitura() {
 
-        if ("speechSynthesis" in window) {
+        if (
+            "speechSynthesis" in window
+        ) {
+
             speechSynthesis.cancel();
+
         }
 
     }
 
+
+
+    /* =====================================
+    FLASHCARD
+    ===================================== */
 
     function mostrarResposta(card) {
 
@@ -1508,7 +2683,15 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
     }
 
 
-    function tecladoFlashcard(event, card) {
+
+    /* =====================================
+    TECLADO DO FLASHCARD
+    ===================================== */
+
+    function tecladoFlashcard(
+        event,
+        card
+    ) {
 
         if (
             event.key === "Enter" ||
@@ -1524,11 +2707,19 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
     }
 
 
+
+    /* =====================================
+    RESTAURAR ACESSIBILIDADE
+    ===================================== */
+
     function restaurarAcessibilidade() {
 
         tamanhoFonte = 100;
 
-        document.body.style.fontSize = "100%";
+        document.documentElement.style.fontSize =
+            "100%";
+
+        document.body.style.fontSize = "";
 
         document.body.classList.remove(
             "alto-contraste",
@@ -1537,13 +2728,12 @@ Também corrigi as funções Ouvir e Diminuir sem alterar o restante da estrutur
             "espacamento-texto"
         );
 
-        if ("speechSynthesis" in window) {
-            speechSynthesis.cancel();
-        }
+        pararLeitura();
 
     }
 
 </script>
+
 
 </body>
 
